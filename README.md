@@ -1,12 +1,6 @@
-## My Project
+## Common IO - basic
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-* Write in your license below and create a LICENSE file
+This repository provides a basic set of I/O libraries (HAL, **H**ardware **A**bstraction **L**ayer) for pins and serial communications on embedded devices.
 
 ## Security
 
@@ -14,5 +8,4 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 ## License
 
-This library is licensed under the LICENSE NAME HERE License.
-
+This library is licensed under the MIT License. See [LICENSE](LICENSE.md) for the license body.
