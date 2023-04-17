@@ -1,2 +1,5 @@
 # local doxygen generation
-doxygen_source/
+docs/doxygen/output/
+
+# VS Code ignores
+.vscode/

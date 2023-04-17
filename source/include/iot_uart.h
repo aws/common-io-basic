@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -115,8 +115,8 @@ typedef struct IotUARTDescriptor * IotUARTHandle_t;
  */
 typedef enum
 {
-    eUartSetConfig,  /** Sets the UART configuration according to @IotUARTConfig_t. */
-    eUartGetConfig,  /** Gets the UART configuration according to @IotUARTConfig_t. */
+    eUartSetConfig,  /** Sets the UART configuration according to IotUARTConfig_t. */
+    eUartGetConfig,  /** Gets the UART configuration according to IotUARTConfig_t. */
     eGetTxNoOfbytes, /** Get the number of bytes sent in write operation. */
     eGetRxNoOfbytes  /** Get the number of bytes received in read operation. */
 } IotUARTIoctlRequest_t;

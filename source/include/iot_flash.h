@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -203,7 +203,6 @@ IotFlashInfo_t * iot_flash_getinfo( IotFlashHandle_t const pxFlashHandle );
  * @param[in]   xCallback       callback function to be called.
  * @param[in]   pvUserContext   user context to be passed when callback is called.
  *
- * @return      None
  */
 void iot_flash_set_callback( IotFlashHandle_t const pxFlashHandle,
                              IotFlashCallback_t xCallback,

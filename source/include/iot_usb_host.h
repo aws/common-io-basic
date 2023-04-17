@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -185,10 +185,10 @@ typedef struct
  */
 typedef struct IotUsbInterfaceInfo
 {
-    IotUsbDeviceEndpointConfig_t endpoint[ IOT_USB_HOST_MAX_ENDPOINTS ];
-    uint8_t ucInterfaceIndex;
-    uint8_t ucEpCount;
-    uint8_t ucAlternateSettingNumber;
+    IotUsbDeviceEndpointConfig_t endpoint[ IOT_USB_HOST_MAX_ENDPOINTS ]; /*!< Endpoint configuration array. */
+    uint8_t ucInterfaceIndex; /*!< Interface index. */
+    uint8_t ucEpCount; /*!< Number of endpoints. */
+    uint8_t ucAlternateSettingNumber; /*!< Alternate setting number. */
 } IotUsbInterfaceInfo_t;
 
 /**
@@ -196,12 +196,12 @@ typedef struct IotUsbInterfaceInfo
  */
 typedef struct IotUsbConfigurationInfo
 {
-    IotUsbInterfaceInfo_t * pxInterface;
-    uint8_t ucInterfaceCount;
+    IotUsbInterfaceInfo_t * pxInterface; /*!< Interface array. */
+    uint8_t ucInterfaceCount; /*!< Number of interfaces. */
 } IotUsbConfigurationInfo_t;
 
 /**
- *  @brief Attached device information.
+ * @brief Attached device information.
  */
 typedef struct IotUsbDeviceInfo
 {
@@ -413,7 +413,7 @@ int32_t iot_usb_host_cancel( IotUsbHostHandle_t const pxUsbHost,
  * @brief Used for various usb host control function.
  *
  * @param[in] pxUsbDevice The USB device peripheral handle for host to control.
- * @param[in] IotUsbHostIoctlRequest_t The request should be one of IotUsbHostIoctlRequest_t.
+ * @param[in] xRequest The request should be one of IotUsbHostIoctlRequest_t.
  * @param[in,out] pvBuffer The request values for the usb host.
  *
  * @return

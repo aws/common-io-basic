@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -189,7 +189,7 @@ int32_t iot_gpio_read_sync( IotGpioHandle_t const pxGpio,
  * @brief   iot_gpio_write_sync is used to write data into the GPIO pin in blocking mode.
  *
  * @param[in]   pxGpio      The GPIO handle returned in the open() call.
- * @param[in]   ucState     The value to write into the GPIO pin.
+ * @param[in]   ucPinState     The value to write into the GPIO pin.
  *
  * @return
  *   - IOT_GPIO_SUCCESS on success
@@ -221,7 +221,7 @@ int32_t iot_gpio_close( IotGpioHandle_t const pxGpio );
  *
  * @param[in] pxGpio        The GPIO handle returned in the open() call.
  * @param[in] xRequest      One of IotGpioIoctlRequest_t enum
- * @param[in/out] pvBuffer  Buffer holding GPIO set or get values.
+ * @param[in,out] pvBuffer  Buffer holding GPIO set or get values.
  *
  * @return
  *   - IOT_GPIO_SUCCESS on success
