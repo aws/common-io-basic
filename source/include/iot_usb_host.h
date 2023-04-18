@@ -42,7 +42,7 @@
 #define IOT_USB_HOST_SUCCESS                   ( 0 ) /*!< USB host operation completed successfully. */
 #define IOT_USB_HOST_ERROR                     ( 1 ) /*!< USB host error. */
 #define IOT_USB_HOST_BUSY                      ( 2 ) /*!< USB host busy. */
-#define IOT_USB_HOST_INVALID_VALUE             ( 3 ) /*!< At least one paramter is invalid. */
+#define IOT_USB_HOST_INVALID_VALUE             ( 3 ) /*!< At least one parameter is invalid. */
 #define IOT_USB_HOST_WRITE_FAIL                ( 4 ) /*!< USB host write operation failed. */
 #define IOT_USB_HOST_READ_FAIL                 ( 5 ) /*!< USB host read operation failed. */
 #define IOT_USB_HOST_CANCEL_FAILED             ( 6 ) /*!< USB host cancel operation failed. */
@@ -452,7 +452,7 @@ int32_t iot_usb_host_send_setup( IotUsbHostHandle_t const pxUsbHost,
                                  uint8_t * pucData );
 
 /**
- * @brief Close the USB hsot peripheral.
+ * @brief Close the USB host peripheral.
  *
  * @param[in] pxUsbHost The USB host handle returned in open() call.
  *

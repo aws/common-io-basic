@@ -55,7 +55,7 @@
  *          Limitation
  * 
  *          SDIO HAL APIs are intended to be used in embedded systems where each SDIO host
- *          controller is connected to either a single hot swappable sido card slot or multiple
+ *          controller is connected to either a single hot swappable sdio card slot or multiple
  *          eSDIO devices in a Shared Bus Configuration (Refer to Section 7.3 of "SD Specification
  *          Part E1 SDIO").
  *
@@ -113,7 +113,7 @@
 
 /*!< If the card is initialized in 1.8V signaling, and card support UHS-I, host
  *   will try to set card's bus timing mode to the highest mode the card
- *   supports using CMD52, and set the max clock frequence for that mode. This
+ *   supports using CMD52, and set the max clock frequency for that mode. This
  *   error code indicates a failure of such operation. */
 #define IOT_SDIO_SELECT_BUS_TIMING_FAIL        ( 7 )
 
@@ -184,7 +184,7 @@ typedef enum IotSdioDirection
  *          - SDIO WLAN interface
  *          - Embedded SDIO-ATA standard interface
  *          - SDIO Bluetooth Type-A AMP standard interface
- *          - Other SDIO standard inferface type identified by
+ *          - Other SDIO standard interface type identified by
  *            Extended SDIO Standard Function interface code
  */
 typedef enum IotSdioFunction

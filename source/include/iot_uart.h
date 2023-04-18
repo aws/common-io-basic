@@ -355,7 +355,7 @@ int32_t iot_uart_write_async( IotUARTHandle_t const pxUartPeripheral,
  * from IotUARTIoctlRequest_t.
  * @param[in,out] pvBuffer The configuration values for the UART port.
  *
- * @return IOT_UART_SUCCESS on successful configuartion of UART port,
+ * @return IOT_UART_SUCCESS on successful configuration of UART port,
  *         else one of the IOT_UART_INVALID_VALUE, IOT_UART_BUSY,
  *         IOT_UART_FUNCTION_NOT_SUPPORTED on error.
  * @return

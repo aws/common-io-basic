@@ -209,7 +209,7 @@ int32_t iot_spi_ioctl( IotSPIHandle_t const pxSPIPeripheral,
  * @brief The SPI master starts reading from the slave synchronously.
  *
  * This function attempts to read certain number of bytes from slave device to a pre-allocated buffer, in synchronous way.
- * This function does not return on paritial read, unless there is an error.
+ * This function does not return on partial read, unless there is an error.
  * And the number of bytes that have been actually read can be obtained by calling iot_spi_ioctl.
  *
  * @note Dummy data will be written to slave while reading. The dummy data value can be configured with iot_spi_ioctl.
@@ -242,7 +242,7 @@ int32_t iot_spi_read_sync( IotSPIHandle_t const pxSPIPeripheral,
  *
  * Once the operation completes successfully, the user callback will be invoked.
  * If the operation encounters an error, the user callback will be invoked.
- * The callback is not invoked on paritial read, unless there is an error.
+ * The callback is not invoked on partial read, unless there is an error.
  * And the number of bytes that have been actually read can be obtained by calling iot_spi_ioctl.
  *
  * @note Dummy data will be written to slave while reading. The dummy data value can be configured with iot_spi_ioctl.
@@ -273,7 +273,7 @@ int32_t iot_spi_read_async( IotSPIHandle_t const pxSPIPeripheral,
  * @brief The SPI master starts transmission of data to the slave synchronously.
  *
  * This function attempts to write certain number of bytes from a pre-allocated buffer to a slave device, in synchronous way.
- * This function does not return on paritial write, unless there is an error.
+ * This function does not return on partial write, unless there is an error.
  * And the number of bytes that have been actually written can be obtained by calling iot_spi_ioctl.
  *
  *
@@ -305,7 +305,7 @@ int32_t iot_spi_write_sync( IotSPIHandle_t const pxSPIPeripheral,
  *
  * Once the operation completes successfully, the user callback will be invoked.
  * If the operation encounters an error, the user callback will be invoked.
- * The callback is not invoked on paritial write, unless there is an error.
+ * The callback is not invoked on partial write, unless there is an error.
  * And the number of bytes that have been actually written can be obtained by calling iot_spi_ioctl.
  *
  * @note In order to get notification when the asynchronous call is completed, iot_spi_set_callback must be called prior to this.
@@ -335,7 +335,7 @@ int32_t iot_spi_write_async( IotSPIHandle_t const pxSPIPeripheral,
  * @brief The SPI master starts a synchronous transfer between master and the slave.
  *
  * This function attempts to read/write certain number of bytes from/to two pre-allocated buffers at the same time, in synchronous way.
- * This function does not return on paritial read/write, unless there is an error.
+ * This function does not return on partial read/write, unless there is an error.
  * And the number of bytes that have been actually read or written can be obtained by calling iot_spi_ioctl.
  *
  * @param[in] pxSPIPeripheral The SPI peripheral handle returned in open() call.
@@ -366,7 +366,7 @@ int32_t iot_spi_transfer_sync( IotSPIHandle_t const pxSPIPeripheral,
  *
  * Once the operation completes successfully, the user callback will be invoked.
  * If the operation encounters an error, the user callback will be invoked.
- * The callback is not invoked on paritial read/write, unless there is an error.
+ * The callback is not invoked on partial read/write, unless there is an error.
  * And the number of bytes that have been actually read/write can be obtained by calling iot_spi_ioctl.
  *
  * @param[in] pxSPIPeripheral The SPI peripheral handle returned in open() call.
@@ -381,7 +381,7 @@ int32_t iot_spi_transfer_sync( IotSPIHandle_t const pxSPIPeripheral,
  *     - pucBuffer is NULL
  *     - xBytes is 0
  * - IOT_SPI_TRANSFER_ERROR, if there is some unknown driver error.
- * - IOT_SPI_BUSY, if the bus is busy which means there is an ongoing opeartion.
+ * - IOT_SPI_BUSY, if the bus is busy which means there is an ongoing operation.
  */
 int32_t iot_spi_transfer_async( IotSPIHandle_t const pxSPIPeripheral,
                                 uint8_t * const pvTxBuffer,

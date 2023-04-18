@@ -114,7 +114,7 @@ int32_t iot_adc_close( IotAdcHandle_t const pxAdc );
  * @param[in] pvUserContext The user context to be passed when callback is called.
  *
  * <b>Example Callback Function</b>
- * For asychronous ADC calls, a callback function is used to signal when the async
+ * For asynchronous ADC calls, a callback function is used to signal when the async
  * task is complete.  This example uses a Semaphore to signal the completion.
  * @code{c}
  * static void prvAdcChCallback( uint16_t * pusConvertedData,

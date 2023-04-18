@@ -43,7 +43,7 @@
 /**
  * @brief Error codes
  */
-#define IOT_GPIO_SUCCESS                   ( 0 )    /*!< GPIO operation completed succesfully. */
+#define IOT_GPIO_SUCCESS                   ( 0 )    /*!< GPIO operation completed successfully. */
 #define IOT_GPIO_INVALID_VALUE             ( 1 )    /*!< At least one parameter is invalid. */
 #define IOT_GPIO_READ_FAILED               ( 2 )    /*!< GPIO read operation failed. */
 #define IOT_GPIO_WRITE_FAILED              ( 3 )    /*!< GPIO write operation failed. */
@@ -154,7 +154,7 @@ IotGpioHandle_t iot_gpio_open( int32_t lGpioNumber );
 
 /**
  * @brief   iot_gpio_set_callback is used to set the callback to be called when an
- *          interrupt is tirggered.
+ *          interrupt is triggered.
  *
  * @note Single callback is used for both read_async and write_async. Newly set callback overrides the one previously set
  * @note This callback will not be invoked when synchronous operation completes.

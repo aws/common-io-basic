@@ -39,7 +39,7 @@
 /**
  * @brief Return values used by this driver
  */
-#define IOT_FLASH_SUCCESS                   ( 0 )    /*!< Flash operation completed succesfully. */
+#define IOT_FLASH_SUCCESS                   ( 0 )    /*!< Flash operation completed successfully. */
 #define IOT_FLASH_INVALID_VALUE             ( 1 )    /*!< At least one parameter is invalid. */
 #define IOT_FLASH_WRITE_FAILED              ( 2 )    /*!< Flash write operation failed. */
 #define IOT_FLASH_READ_FAILED               ( 3 )    /*!< Flash read operation failed. */
@@ -264,7 +264,7 @@ int32_t iot_flash_ioctl( IotFlashHandle_t const pxFlashHandle,
  *   pxFlashInfo = iot_flash_getinfo(xFlashHandle);
  *   // assert(pxFlashInfo == NULL);
  *
- *   // If Erase asyc is supported, register a callback
+ *   // If Erase async is supported, register a callback
  *   if ( pxFlashInfo->ucAsyncSupported )
  *   {
  *       iot_flash_set_callback(xFlashHandle,
