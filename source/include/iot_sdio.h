@@ -82,20 +82,12 @@
 /**
  * @brief The return codes for the functions in SDIO
  */
-/*!< SDIO operation completed successfully. */
-#define IOT_SDIO_SUCCESS                       ( 0 )
 
-/*!< SDIO ioctl failed. */
-#define IOT_SDIO_IOCTL_FAIL                    ( 1 )
-
-/*!< SDIO host controller initialization failed. */
-#define IOT_SDIO_HOST_INIT_FAIL                ( 2 )
-
-/*!< At least one parameter is invalid. */
-#define IOT_SDIO_INVALID_VALUE                 ( 3 )
-
-/*!< Sending command to or receive response from card failed. */
-#define IOT_SDIO_TRANSFER_FAIL                 ( 4 )
+#define IOT_SDIO_SUCCESS                       ( 0 )    /*!< SDIO operation completed successfully. */
+#define IOT_SDIO_IOCTL_FAIL                    ( 1 )    /*!< SDIO ioctl failed. */
+#define IOT_SDIO_HOST_INIT_FAIL                ( 2 )    /*!< SDIO host controller initialization failed. */
+#define IOT_SDIO_INVALID_VALUE                 ( 3 )    /*!< At least one parameter is invalid. */
+#define IOT_SDIO_TRANSFER_FAIL                 ( 4 )    /*!< Sending command to or receive response from card failed. */
 
 /*!< If the card is initialized in 3.3V signaling, and card support high speed
  *   mode (SHS ==1), host can issue CMD52 in RAW mode, setting EHS bit in CCCR
@@ -117,8 +109,7 @@
  *   error code indicates a failure of such operation. */
 #define IOT_SDIO_SELECT_BUS_TIMING_FAIL        ( 7 )
 
-/*!< Setting block size for block transfer mode failed. */
-#define IOT_SDIO_SET_CARD_BLOCK_SIZE_FAIL      ( 8 )
+#define IOT_SDIO_SET_CARD_BLOCK_SIZE_FAIL      ( 8 )    /*!< Setting block size for block transfer mode failed. */
 
 /*!< During card initialization, A host that supports UHS-I use CMD5 to probe if
  *   card also supports UHS-I and ready to switch from 3.3v to 1.8v. Once
@@ -127,33 +118,19 @@
  *   to CMD11 or card responded to CMD11 but failed to switch voltage. */
 #define IOT_SDIO_SWITCH_VOLTAGE_FAIL           ( 9 )
 
-/*!< host controller not ready. */
-#define IOT_SDIO_HOST_NOT_READY                ( 10 )
-
-/*!< Not a valid SDIO card. */
-#define IOT_SDIO_INVALID_CARD                  ( 11 )
-
-/*!< Send Relative Address (CMD3) failed. */
-#define IOT_SDIO_SEND_RELATIVE_ADDRESS_FAIL    ( 12 )
-
-/*!< Select Card (CMD7) failed. */
-#define IOT_SDIO_SELECT_CARD_FAIL              ( 13 )
+#define IOT_SDIO_HOST_NOT_READY                ( 10 )   /*!< host controller not ready. */
+#define IOT_SDIO_INVALID_CARD                  ( 11 )   /*!< Not a valid SDIO card. */
+#define IOT_SDIO_SEND_RELATIVE_ADDRESS_FAIL    ( 12 )   /*!< Send Relative Address (CMD3) failed. */
+#define IOT_SDIO_SELECT_CARD_FAIL              ( 13 )   /*!< Select Card (CMD7) failed. */
 
 /*!< Read (via CMD52) CIS (Card Information
  *   Structure failed. */
 #define IOT_SDIO_READ_CIS_FAIL                 ( 14 )
 
-/*!< Set (via CMD52) data bus width failed. */
-#define IOT_SDIO_SET_DATA_BUS_WIDTH_FAIL       ( 15 )
-
-/*!< Card does not support Asynchronous Interrupt. */
-#define IOT_SDIO_ASYNC_INT_NOT_SUPPORTED       ( 16 )
-
-/*!< Reading CCCR (function 0) or FBR (function 1-7) failed. */
-#define IOT_SDIO_GET_CARD_CAPABILITY_FAIL      ( 17 )
-
-/*!< API function is not supported by platform. */
-#define IOT_SDIO_FUNCTION_NOT_SUPPORTED        ( 18 )
+#define IOT_SDIO_SET_DATA_BUS_WIDTH_FAIL       ( 15 )   /*!< Set (via CMD52) data bus width failed. */
+#define IOT_SDIO_ASYNC_INT_NOT_SUPPORTED       ( 16 )   /*!< Card does not support Asynchronous Interrupt. */
+#define IOT_SDIO_GET_CARD_CAPABILITY_FAIL      ( 17 )   /*!< Reading CCCR (function 0) or FBR (function 1-7) failed. */
+#define IOT_SDIO_FUNCTION_NOT_SUPPORTED        ( 18 )   /*!< API function is not supported by platform. */
 
 /**
  * @brief sdio io bus width
