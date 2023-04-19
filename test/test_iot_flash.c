@@ -375,7 +375,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseSector )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -444,7 +444,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseMultipleSectors )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -500,7 +500,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocks )
         /* Make sure the offset is aligned to BlockSize */
         if( ( ultestIotFlashStartOffset & ( pxFlashInfo->ulBlockSize - 1 ) ) == 0 )
         {
-            /* If Erase asyc is supported, register a callback */
+            /* If Erase async is supported, register a callback */
             if( pxFlashInfo->ucAsyncSupported )
             {
                 iot_flash_set_callback( xFlashHandle,
@@ -559,7 +559,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocks )
 
 /**
  * @brief Test Function to test erasing blockSize minus sector Size when address is
- * one sector greater than block alignemtnt, and make sure the sector not included in
+ * one sector greater than block alignment, and make sure the sector not included in
  * the Address is not erased, but the rest is erased.
  *
  */
@@ -583,7 +583,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocksUnAlignedAddress )
         /* Make sure the offset is aligned to BlockSize */
         if( ( ultestIotFlashStartOffset & ( pxFlashInfo->ulBlockSize - 1 ) ) == 0 )
         {
-            /* If Erase asyc is supported, register a callback */
+            /* If Erase async is supported, register a callback */
             if( pxFlashInfo->ucAsyncSupported )
             {
                 iot_flash_set_callback( xFlashHandle,
@@ -612,7 +612,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocksUnAlignedAddress )
              */
             prvIotFlashWriteReadVerify( xFlashHandle, ulMiddleOffset, pxFlashInfo->ulSectorSize );
 
-            /* Erase a Block minus sector size starting at block boundry plus sector size */
+            /* Erase a Block minus sector size starting at block boundary plus sector size */
             lRetVal = iot_flash_erase_sectors( xFlashHandle,
                                                ultestIotFlashStartOffset + pxFlashInfo->ulSectorSize,
                                                pxFlashInfo->ulBlockSize - pxFlashInfo->ulSectorSize );
@@ -648,7 +648,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocksUnAlignedAddress )
 
 /**
  * @brief Test Function to test erasing blockSize minus sector Size when size is
- * one sector less than block alignemtnt, and make sure the sector not included in
+ * one sector less than block alignment, and make sure the sector not included in
  * the block size is not erased, but the rest is erased.
  *
  */
@@ -672,7 +672,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocksUnAlignedSize )
         /* Make sure the offset is aligned to BlockSize */
         if( ( ultestIotFlashStartOffset & ( pxFlashInfo->ulBlockSize - 1 ) ) == 0 )
         {
-            /* If Erase asyc is supported, register a callback */
+            /* If Erase async is supported, register a callback */
             if( pxFlashInfo->ucAsyncSupported )
             {
                 iot_flash_set_callback( xFlashHandle,
@@ -711,7 +711,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseFlashBlocksUnAlignedSize )
 
             prvIotFlashWriteReadVerify( xFlashHandle, ulOffset, pxFlashInfo->ulSectorSize );
 
-            /* Erase a Block minus sector size starting at block boundry */
+            /* Erase a Block minus sector size starting at block boundary */
             lRetVal = iot_flash_erase_sectors( xFlashHandle,
                                                ultestIotFlashStartOffset,
                                                pxFlashInfo->ulBlockSize - pxFlashInfo->ulSectorSize );
@@ -838,7 +838,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWritePartialPage )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -925,7 +925,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWritePage )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -978,7 +978,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteSector )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1031,7 +1031,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteAcrossSectors )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1204,7 +1204,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteProtectWriteFailure )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1303,7 +1303,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteProtectEraseFailure )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1468,7 +1468,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteEraseReadCycle )
 
 
 /**
- * @brief Test Function to test Write susepnd and resume operations
+ * @brief Test Function to test Write suspend and resume operations
  *
  */
 TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteSuspendResume )
@@ -1493,7 +1493,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteSuspendResume )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1561,7 +1561,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteSuspendResume )
         TEST_ASSERT_EQUAL( IOT_FLASH_SUCCESS, lRetVal );
         TEST_ASSERT_EQUAL( eFlashIdle, lStatus );
 
-        /* Read the data back to make sure Resume succeded and data is written */
+        /* Read the data back to make sure Resume succeeded and data is written */
         prvIotFlashReadVerifyDummyData( xFlashHandle, ultestIotFlashStartOffset, pxFlashInfo->ulSectorSize );
 
         lRetVal = iot_timer_close( xTimerHandle );
@@ -1574,7 +1574,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteSuspendResume )
 }
 
 /**
- * @brief Test Function to test Erase susepnd and resume operations
+ * @brief Test Function to test Erase suspend and resume operations
  *
  */
 TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseSuspendResume )
@@ -1613,7 +1613,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseSuspendResume )
         lRetVal = iot_timer_start( xTimerHandle );
         TEST_ASSERT_EQUAL( IOT_TIMER_SUCCESS, lRetVal );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1664,7 +1664,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashEraseSuspendResume )
             TEST_ASSERT_EQUAL( pdTRUE, lRetVal );
         }
 
-        /* Read the data back to make sure Resume succeded and data is erased */
+        /* Read the data back to make sure Resume succeeded and data is erased */
         prvIotFlashReadVerifyErased( xFlashHandle, ultestIotFlashStartOffset, pxFlashInfo->ulSectorSize * 2 );
 
         lRetVal = iot_timer_close( xTimerHandle );
@@ -1700,7 +1700,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWritePageFromFlash )
         pxFlashInfo = iot_flash_getinfo( xFlashHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, pxFlashInfo );
 
-        /* If Erase asyc is supported, register a callback */
+        /* If Erase async is supported, register a callback */
         if( pxFlashInfo->ucAsyncSupported )
         {
             iot_flash_set_callback( xFlashHandle,
@@ -1790,7 +1790,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashOpenCloseFuzz )
 
     if( TEST_PROTECT() )
     {
-        /* open the same intance twice */
+        /* open the same instance twice */
         xFlashHandleTmp = iot_flash_open( ltestIotFlashInstance );
         TEST_ASSERT_EQUAL( NULL, xFlashHandleTmp );
 

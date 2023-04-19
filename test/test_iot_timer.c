@@ -203,7 +203,7 @@ TEST( TEST_IOT_TIMER, AFWP_IotTimer_Running )
 }
 
 /**
- * @brief Test Function to test stopping the timre
+ * @brief Test Function to test stopping timer
  *
  */
 TEST( TEST_IOT_TIMER, AFWP_IotTimer_Stop )
@@ -586,7 +586,7 @@ TEST( TEST_IOT_TIMER, AFWP_IotTimer_CallbackFuzzing )
     IotTimerHandle_t xTimerHandle;
     int32_t lRetVal;
 
-    /* Call set_callback with NULLL handle */
+    /* Call set_callback with NULL handle */
     iot_timer_set_callback( NULL, prvTimerCallback, NULL );
 
 
@@ -594,7 +594,7 @@ TEST( TEST_IOT_TIMER, AFWP_IotTimer_CallbackFuzzing )
     xTimerHandle = iot_timer_open( ltestIotTimerInstance );
     TEST_ASSERT_NOT_EQUAL( NULL, xTimerHandle );
 
-    /* Call set_callback with NULLL handle */
+    /* Call set_callback with NULL handle */
     iot_timer_set_callback( xTimerHandle, NULL, NULL );
 
     /* Close once with valid handle */

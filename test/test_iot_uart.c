@@ -221,7 +221,7 @@ TEST( TEST_IOT_UART, AFQP_IotUARTIoctlGetSet )
         lIoctl = iot_uart_ioctl( xUartHandle, eUartGetConfig, &xOriginalConfig );
         TEST_ASSERT_EQUAL( IOT_UART_SUCCESS, lIoctl );
 
-        /* Initialze to a known value, then one by one change, and make sure it changes */
+        /* Initialize to a known value, then one by one change, and make sure it changes */
         memcpy( &xConfigBuffer, &xSampleConfig1, sizeof( IotUARTConfig_t ) );
         lIoctl = iot_uart_ioctl( xUartHandle, eUartSetConfig, &xConfigBuffer );
         TEST_ASSERT_EQUAL( IOT_UART_SUCCESS, lIoctl );
@@ -293,7 +293,7 @@ TEST( TEST_IOT_UART, AFQP_IotUARTIoctlGetSet )
 
 /**
  * @brief Test Function to check if UART can be configured to a different baudrate.
- *  Works by signal external device to change to a new baudrate. Sending and recieving a message.
+ *  Works by signal external device to change to a new baudrate. Sending and receiving a message.
  *  Then signals to return back to default baudrate.
  *-----------------------------------------------------------*/
 TEST( TEST_IOT_UART, AFQP_AssistedIotUARTBaudChange )
@@ -361,7 +361,7 @@ TEST( TEST_IOT_UART, AFQP_AssistedIotUARTBaudChange )
         lRead = iot_uart_read_sync( xUartHandle, cpBufferRead, testIotUART_BUFFER_LENGTH );
         TEST_ASSERT_EQUAL( IOT_UART_SUCCESS, lRead );
 
-        /* Baudrate reverted succesfully */
+        /* Baudrate reverted successfully */
         TEST_ASSERT_EQUAL( 0, strncmp( ( char * ) cpBuffer, ( char * ) cpBufferRead, testIotUART_BUFFER_LENGTH ) );
     }
 
@@ -479,7 +479,7 @@ TEST( TEST_IOT_UART, AFQP_AssistedIotUARTWriteAsync )
  * @brief Test function to test the asynchronous read with UART by doing a
  * hardware loopback. The Tx and Rx pin on the vendor board are shorted with a
  * connector and the test is run by transmitting some bytes on write async and checking
- * if same characters are read aynchronously.
+ * if same characters are read asynchronously.
  */
 TEST( TEST_IOT_UART, AFQP_IotUARTWriteReadAsyncWithCallback )
 {

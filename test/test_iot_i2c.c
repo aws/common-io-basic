@@ -1020,7 +1020,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteAsyncFailIoctl )
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetSlaveAddr, &uctestIotI2CSlaveAddr );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
-        /* wirte the value to the device */
+        /* write the value to the device */
         lRetVal = iot_i2c_write_async( xI2CHandle, writeVal, sizeof( writeVal ) );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -1348,7 +1348,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteSyncAssisted )
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetSlaveAddr, &ucAssistedTestIotI2CSlaveAddr );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
-        /* Wirte the value to the device */
+        /* write the value to the device */
         lRetVal = iot_i2c_write_sync( xI2CHandle, writeVal, sizeof( writeVal ) );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
     }

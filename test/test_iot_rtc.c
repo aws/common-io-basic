@@ -42,7 +42,7 @@
 
 /*-----------------------------------------------------------*/
 #define testIotRTC_DEFAULT_INVALID_DATE        ( 0xFFFF )
-#define testIotRTC_DEFAULT_CURRENT_WEEK_DAY    ( 2 )    /* 1st of January 2019 is a tuesday */
+#define testIotRTC_DEFAULT_CURRENT_WEEK_DAY    ( 2 )    /* 1st of January 2019 is a Tuesday */
 #define testIotRTC_DEFAULT_CURRENT_YEAR        ( 119 )  /* 2019 */
 #define testIotRTC_DEFAULT_CURRENT_MONTH       ( 0 )    /* January*/
 #define testIotRTC_DEFAULT_CURRENT_DAY         ( 1 )    /* 1st of the month */

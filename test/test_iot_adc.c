@@ -494,7 +494,7 @@ TEST( TEST_IOT_ADC, AFQP_IotAdcOpenCloseFuzzy )
     IotAdcHandle_t xAdcHandle, xAdcHandleTmp;
     int32_t lRetVal;
 
-    /* invliad ADC instance number */
+    /* invalid ADC instance number */
     xAdcHandle = iot_adc_open( 0xFFFFFFFF );
     TEST_ASSERT_EQUAL( NULL, xAdcHandle );
 

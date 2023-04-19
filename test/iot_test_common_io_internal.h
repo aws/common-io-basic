@@ -36,7 +36,7 @@
 
 /*
  * Test iteration count macros that platforms should set
- * in their repective "test_iot_config.h" file. If not set
+ * in their respective "test_iot_config.h" file. If not set
  * there, the default value of 1 is set here.
  */
 
