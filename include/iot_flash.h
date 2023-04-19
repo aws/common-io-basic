@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -39,7 +39,7 @@
 /**
  * @brief Return values used by this driver
  */
-#define IOT_FLASH_SUCCESS                   ( 0 )    /*!< Flash operation completed succesfully. */
+#define IOT_FLASH_SUCCESS                   ( 0 )    /*!< Flash operation completed successfully. */
 #define IOT_FLASH_INVALID_VALUE             ( 1 )    /*!< At least one parameter is invalid. */
 #define IOT_FLASH_WRITE_FAILED              ( 2 )    /*!< Flash write operation failed. */
 #define IOT_FLASH_READ_FAILED               ( 3 )    /*!< Flash read operation failed. */
@@ -203,7 +203,6 @@ IotFlashInfo_t * iot_flash_getinfo( IotFlashHandle_t const pxFlashHandle );
  * @param[in]   xCallback       callback function to be called.
  * @param[in]   pvUserContext   user context to be passed when callback is called.
  *
- * @return      None
  */
 void iot_flash_set_callback( IotFlashHandle_t const pxFlashHandle,
                              IotFlashCallback_t xCallback,
@@ -265,7 +264,7 @@ int32_t iot_flash_ioctl( IotFlashHandle_t const pxFlashHandle,
  *   pxFlashInfo = iot_flash_getinfo(xFlashHandle);
  *   // assert(pxFlashInfo == NULL);
  *
- *   // If Erase asyc is supported, register a callback
+ *   // If Erase async is supported, register a callback
  *   if ( pxFlashInfo->ucAsyncSupported )
  *   {
  *       iot_flash_set_callback(xFlashHandle,

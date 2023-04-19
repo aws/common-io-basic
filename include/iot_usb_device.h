@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -75,7 +75,7 @@ typedef enum
     eUSBDeviceBusResetEvent,        /*!< USB bus reset signal detected. Signal is initiated from USB Host. */
     eUSBDeviceLPMState1Event,       /*!< USB LPM (link power management) state 1 event: for usb 2.0, correspond to L1 sleep, host initialize
                                      *  LPM extended transaction; for usb 3.0, correspond to U1 standby, both device and host can initialize. */
-    eUSBDeviceLPMState2Event,       /*!< USB LPM state 2 event: for usb 2.0, correspond to L2 suspend, host nees to support to trigger it after
+    eUSBDeviceLPMState2Event,       /*!< USB LPM state 2 event: for usb 2.0, correspond to L2 suspend, host needs to support to trigger it after
                                      *   3ms of inactivity; for usb 3.0, correspond to U2 standby, both device and host can initialize. */
     eUSBDeviceLPMState3Event,       /*!< USB LPM state 3 event: for usb 2.0, correspond to L3 off, disconnect or power off will trigger it;
                                      *   for usb 3.0, correspond to U3 suspend, it can only be initialized by host. */
@@ -193,7 +193,7 @@ typedef int32_t (* IotUsbDeviceCallback_t) ( IotUsbDeviceHandle_t const pxUsbDev
 /**
  * @brief The callback typedef for USB device endpoint. For each endpoint, it's passed when user
  *        set endpoint callback by iot_usb_device_set_endpoint_callback API.
- *        This callback is used to notify the upper layer about the endpoint tranafer result.
+ *        This callback is used to notify the upper layer about the endpoint transfer result.
  *
  * @param[out] xStatus    Usb device asynchronous operation status.
  * @param[in] pvUserContext User Context passed when setting the callback.
@@ -246,7 +246,7 @@ typedef struct
 /**
  * @brief Initiates the usb device controller interface.
  *
- * @lUsbDeviceControllerInstance The instance of USB device controller to initialize.
+ * @param lUsbDeviceControllerInstance The instance of USB device controller to initialize.
  *
  * @return
  *   - The handle to the USB device if SUCCESS
@@ -517,7 +517,7 @@ int32_t iot_usb_device_write_async( IotUsbDeviceHandle_t const pxUsbDevice,
  *   - IOT_USB_DEVICE_INVALID_VALUE if
  *      - pxUsbDevice is NULL.
  *      - invalid xUsbDeviceRequest
- *   - IOT_USB_DEVICE_FUNCTION_NOT_SUPPORTED if ioctl request not suported.
+ *   - IOT_USB_DEVICE_FUNCTION_NOT_SUPPORTED if ioctl request not supported.
  *      -  Only valid for
  *      -    eUSBDeviceSleepBus
  *      -    eUSBDeviceSuspendBus
@@ -541,7 +541,7 @@ int32_t iot_usb_device_ioctl( IotUsbDeviceHandle_t const pxUsbDevice,
  *   - IOT_USB_DEVICE_INVALID_VALUE if
  *      - pxUsbDevice is NULL.
  *      - invalid ucEndpointAddress
- *   - IOT_USB_DEVICE_FUNCTION_NOT_SUPPORTED if cancel transfer opertion not supported
+ *   - IOT_USB_DEVICE_FUNCTION_NOT_SUPPORTED if cancel transfer operation not supported
  *   - IOT_USB_DEVICE_NOTHING_TO_CANCEL if nothing to cancel
  */
 int32_t iot_usb_device_endpoint_cancel_transfer( IotUsbDeviceHandle_t const pxUsbDevice,

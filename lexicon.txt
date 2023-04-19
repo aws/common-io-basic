@@ -666,7 +666,7 @@ ebatterynotcharging
 ebatteryoverchargingtemp
 ebatteryovertemp
 ebatteryovervoltage
-ebatteryunderchargingtemp
+ebatteryunderhargingtemp
 ebatteryundertemp
 ebatteryundervoltage
 ebatteryunknown
@@ -755,7 +755,7 @@ egetrtcwakeuptime
 egetrxnoofbytes
 egetstatus
 egettxnoofbytes
-egetvddoffwakethreshold
+egetvddofffwakethreshold
 egetwakeupsources
 egetwatchdogbarktime
 egetwatchdogbitetime
@@ -929,7 +929,7 @@ esetgpiospeed
 esetpcwakethreshold
 esetrtcalarm
 esetrtcwakeuptime
-esetvddoffwakethreshold
+esetvddofffwakethreshold
 esetwakeupsources
 esetwatchdogbarktime
 esetwatchdogbitebehaviour

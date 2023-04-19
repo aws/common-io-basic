@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -45,6 +45,9 @@
 #define IOT_RESET_FUNCTION_NOT_SUPPORTED    ( 1 )    /**< Reset function not supported. */
 #define IOT_RESET_INVALID_VALUE             ( 2 )    /**< At least one parameter is invalid. */
 
+/**
+ * @brief enum for the reason of the last reset
+ */
 typedef enum
 {
     eResetPowerOnBoot, /**< Normal power on Boot, when the power is applied to the device. */
@@ -57,6 +60,9 @@ typedef enum
     eResetOther,       /**< Last reset caused by other reasons specific to the underlying hardware */
 } IotResetReason_t;
 
+/**
+ * @brief enum for the type of reset to perform
+ */
 typedef enum
 {
     eResetWarmBootFlag, /**< Perform warm-reset */

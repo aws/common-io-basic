@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,7 +43,7 @@
 /**
  * @brief Error codes
  */
-#define IOT_GPIO_SUCCESS                   ( 0 )    /*!< GPIO operation completed succesfully. */
+#define IOT_GPIO_SUCCESS                   ( 0 )    /*!< GPIO operation completed successfully. */
 #define IOT_GPIO_INVALID_VALUE             ( 1 )    /*!< At least one parameter is invalid. */
 #define IOT_GPIO_READ_FAILED               ( 2 )    /*!< GPIO read operation failed. */
 #define IOT_GPIO_WRITE_FAILED              ( 3 )    /*!< GPIO write operation failed. */
@@ -154,7 +154,7 @@ IotGpioHandle_t iot_gpio_open( int32_t lGpioNumber );
 
 /**
  * @brief   iot_gpio_set_callback is used to set the callback to be called when an
- *          interrupt is tirggered.
+ *          interrupt is triggered.
  *
  * @note Single callback is used for both read_async and write_async. Newly set callback overrides the one previously set
  * @note This callback will not be invoked when synchronous operation completes.
@@ -189,7 +189,7 @@ int32_t iot_gpio_read_sync( IotGpioHandle_t const pxGpio,
  * @brief   iot_gpio_write_sync is used to write data into the GPIO pin in blocking mode.
  *
  * @param[in]   pxGpio      The GPIO handle returned in the open() call.
- * @param[in]   ucState     The value to write into the GPIO pin.
+ * @param[in]   ucPinState     The value to write into the GPIO pin.
  *
  * @return
  *   - IOT_GPIO_SUCCESS on success
@@ -221,7 +221,7 @@ int32_t iot_gpio_close( IotGpioHandle_t const pxGpio );
  *
  * @param[in] pxGpio        The GPIO handle returned in the open() call.
  * @param[in] xRequest      One of IotGpioIoctlRequest_t enum
- * @param[in/out] pvBuffer  Buffer holding GPIO set or get values.
+ * @param[in,out] pvBuffer  Buffer holding GPIO set or get values.
  *
  * @return
  *   - IOT_GPIO_SUCCESS on success

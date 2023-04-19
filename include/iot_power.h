@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -115,11 +115,11 @@ typedef enum IotPowerIoctlRequest
                                  * the time you set to ClkSrcOffWakeThreshold then the device would
                                  * enter ClkSrcOffModeMode.  Threshold values are uint32_t in millisecond units.*/
     eGetClkSrcOffWakeThreshold, /*!< Get Clock off threshold time.  Threshold values are uint32_t in millisecond units.*/
-    eSetVddOfffWakeThreshold,   /*!< VddOffMode is entered when expected idle time provided by RTOS
+    eSetVddOfffWakeThreshold,    /*!< VddOffMode is entered when expected idle time provided by RTOS
                                  * is greater or equal to the VddOfffWakeThreshold. If all idleTask meet
                                  * this condition, core will shut off to enter VddOffMode.
                                  * Threshold values are uint32_t in millisecond units. */
-    eGetVddOfffWakeThreshold,   /*!< Get power off (vdd rails off - or lower input voltage etc..) threshold time.
+    eGetVddOfffWakeThreshold,    /*!< Get power off (vdd rails off - or lower input voltage etc..) threshold time.
                                  * Threshold values are uint32_t in millisecond units.  */
     eSetWakeupSources,          /*!< Set wakeup sources that can wake-up the target from idle modes. Wakeup sources
                                  * may only be needed for specific idle modes based on the thresholds set above
@@ -147,7 +147,7 @@ typedef void ( * IotPowerCallback_t )( bool bIdleState,
 
 /**
  * @brief   iot_power_open is used to Initialize the CPU power management driver.
- *          power_open sets up the default mode to eNomralMode, so when the power_open is called,
+ *          power_open sets up the default mode to eNormalMode, so when the power_open is called,
  *          the caller must set the mode using set_mode to a specific mode of interest.
  *
  * @return

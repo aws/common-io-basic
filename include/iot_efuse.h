@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -140,7 +140,7 @@ int32_t iot_efuse_read_16bit_word( IotEfuseHandle_t const pxEfuseHandle,
  * @param[in] pxEfuseHandle handle to efuse interface returned in iot_efuse_open()
  * @param[in] ulIndex index of efuse word to write to. Caller must know the underlying
  *            efuse mechanism and make sure index is a valid one.
- * @param[in] ulValue The 16-bit value to write.
+ * @param[in] value The 16-bit value to write.
  *
  * @return
  *   - IOT_EFUSE_SUCCESS if write succeeded,

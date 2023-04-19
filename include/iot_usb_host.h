@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -42,7 +42,7 @@
 #define IOT_USB_HOST_SUCCESS                   ( 0 ) /*!< USB host operation completed successfully. */
 #define IOT_USB_HOST_ERROR                     ( 1 ) /*!< USB host error. */
 #define IOT_USB_HOST_BUSY                      ( 2 ) /*!< USB host busy. */
-#define IOT_USB_HOST_INVALID_VALUE             ( 3 ) /*!< At least one paramter is invalid. */
+#define IOT_USB_HOST_INVALID_VALUE             ( 3 ) /*!< At least one parameter is invalid. */
 #define IOT_USB_HOST_WRITE_FAIL                ( 4 ) /*!< USB host write operation failed. */
 #define IOT_USB_HOST_READ_FAIL                 ( 5 ) /*!< USB host read operation failed. */
 #define IOT_USB_HOST_CANCEL_FAILED             ( 6 ) /*!< USB host cancel operation failed. */
@@ -185,10 +185,10 @@ typedef struct
  */
 typedef struct IotUsbInterfaceInfo
 {
-    IotUsbDeviceEndpointConfig_t endpoint[ IOT_USB_HOST_MAX_ENDPOINTS ];
-    uint8_t ucInterfaceIndex;
-    uint8_t ucEpCount;
-    uint8_t ucAlternateSettingNumber;
+    IotUsbDeviceEndpointConfig_t endpoint[ IOT_USB_HOST_MAX_ENDPOINTS ]; /*!< Endpoint configuration array. */
+    uint8_t ucInterfaceIndex;                                            /*!< Interface index. */
+    uint8_t ucEpCount;                                                   /*!< Number of endpoints. */
+    uint8_t ucAlternateSettingNumber;                                    /*!< Alternate setting number. */
 } IotUsbInterfaceInfo_t;
 
 /**
@@ -196,12 +196,12 @@ typedef struct IotUsbInterfaceInfo
  */
 typedef struct IotUsbConfigurationInfo
 {
-    IotUsbInterfaceInfo_t * pxInterface;
-    uint8_t ucInterfaceCount;
+    IotUsbInterfaceInfo_t * pxInterface; /*!< Interface array. */
+    uint8_t ucInterfaceCount;            /*!< Number of interfaces. */
 } IotUsbConfigurationInfo_t;
 
 /**
- *  @brief Attached device information.
+ * @brief Attached device information.
  */
 typedef struct IotUsbDeviceInfo
 {
@@ -344,7 +344,7 @@ int32_t iot_usb_host_write_async( IotUsbHostHandle_t const pxUsbHost,
 /**
  * @brief Starts the usb host read operation in blocking mode.
  *
- * @note This function will block untill all xBytes are read.
+ * @note This function will block until all xBytes are read.
  *
  * @param[in] pxUsbHost The usb host peripheral handle returned in iot_usb_host_open() function.
  * @param[in] pxPipe The pipe handle.
@@ -369,7 +369,7 @@ int32_t iot_usb_host_read_sync( IotUsbHostHandle_t const pxUsbHost,
 /**
  * @brief Starts the usb host write operation in blocking mode.
  *
- * @note This function will block untill all xBytes are written.
+ * @note This function will block until all xBytes are written.
  *
  * @param[in] pxUsbHost The usb host peripheral handle returned in iot_usb_host_open() function.
  * @param[in] pxPipe The pipe handle.
@@ -413,7 +413,7 @@ int32_t iot_usb_host_cancel( IotUsbHostHandle_t const pxUsbHost,
  * @brief Used for various usb host control function.
  *
  * @param[in] pxUsbDevice The USB device peripheral handle for host to control.
- * @param[in] IotUsbHostIoctlRequest_t The request should be one of IotUsbHostIoctlRequest_t.
+ * @param[in] xRequest The request should be one of IotUsbHostIoctlRequest_t.
  * @param[in,out] pvBuffer The request values for the usb host.
  *
  * @return
@@ -452,7 +452,7 @@ int32_t iot_usb_host_send_setup( IotUsbHostHandle_t const pxUsbHost,
                                  uint8_t * pucData );
 
 /**
- * @brief Close the USB hsot peripheral.
+ * @brief Close the USB host peripheral.
  *
  * @param[in] pxUsbHost The USB host handle returned in open() call.
  *
