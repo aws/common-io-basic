@@ -239,6 +239,7 @@ cellulardemotask
 cellularloglevel
 cellulartest
 cellulartesttask
+celsius
 centre
 ceo
 cer
@@ -878,7 +879,7 @@ esdiocardinterruptevent
 esdiocardpoweroffevent
 esdiocardpoweronevent
 esdiocardremovedevent
-esdiocheckcardpresense
+esdiocheckcardpresence
 esdioenableasyncirqmode
 esdioenableio
 esdioenableiofunctionirq
@@ -984,6 +985,7 @@ eusbdeviceattachevent
 eusbdevicebusresetevent
 eusbdevicecompleted
 eusbdevicecontrollerehci
+eusbdevicecontrollerohci
 eusbdevicecontrolleruhci
 eusbdevicecontrollerxhci
 eusbdevicedetachevent
@@ -1021,7 +1023,7 @@ eusbhostgetdeviceaddress
 eusbhostgetdevicecontrolpipe
 eusbhostgetdeviceinfo
 eusbhostgethosthandle
-eusbhostgetinterfacedesciptor
+eusbhostgetinterfacedescriptor
 eusbhostgetinterfacehandle
 eusbhostgetinterfaceinfo
 eusbhostopendeviceinterface
@@ -1289,7 +1291,7 @@ icu
 idd
 ide
 idlepcmode
-idlestatue
+idlestate
 idletask
 idproductl
 idvendorl
@@ -2618,7 +2620,7 @@ pxpkcslabelsptr
 pxport
 pxpowerhandle
 pxpublishinfo
-pxpwnhandle
+pxpwmhandle
 pxqueue
 pxreadhandle
 pxreceivecompletedcallback
@@ -2847,6 +2849,7 @@ scanf
 scf
 schedulersuspend
 sci
+sck
 scott
 scr
 scrf
@@ -3253,8 +3256,8 @@ ucnormallyfullreceivedvalues
 uconeshottimercounter
 ucpinstate
 ucport
-ucpwnchannel
-ucpwndutycycle
+ucpwmchannel
+ucpwmdutycycle
 ucqos
 ucqueuegetqueuetype
 ucqueuestoragearea
@@ -3293,6 +3296,7 @@ uint
 uintptr
 uip
 ul
+uladcsampletime
 uladditionaloffset
 uladdress
 ulamount
