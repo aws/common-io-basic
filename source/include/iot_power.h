@@ -116,7 +116,7 @@ typedef enum IotPowerIoctlRequest
                                  * enter ClkSrcOffModeMode.  Threshold values are uint32_t in millisecond units.*/
     eGetClkSrcOffWakeThreshold, /*!< Get Clock off threshold time.  Threshold values are uint32_t in millisecond units.*/
     eSetVddOffWakeThreshold,   /*!< VddOffMode is entered when expected idle time provided by RTOS
-                                 * is greater or equal to the VddOfffWakeThreshold. If all idleTask meet
+                                 * is greater or equal to the VddOffWakeThreshold. If all idleTask meet
                                  * this condition, core will shut off to enter VddOffMode.
                                  * Threshold values are uint32_t in millisecond units. */
     eGetVddOffWakeThreshold,   /*!< Get power off (vdd rails off - or lower input voltage etc..) threshold time.

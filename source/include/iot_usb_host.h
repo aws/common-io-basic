@@ -344,7 +344,7 @@ int32_t iot_usb_host_write_async( IotUsbHostHandle_t const pxUsbHost,
 /**
  * @brief Starts the usb host read operation in blocking mode.
  *
- * @note This function will block untill all xBytes are read.
+ * @note This function will block until all xBytes are read.
  *
  * @param[in] pxUsbHost The usb host peripheral handle returned in iot_usb_host_open() function.
  * @param[in] pxPipe The pipe handle.
@@ -369,7 +369,7 @@ int32_t iot_usb_host_read_sync( IotUsbHostHandle_t const pxUsbHost,
 /**
  * @brief Starts the usb host write operation in blocking mode.
  *
- * @note This function will block untill all xBytes are written.
+ * @note This function will block until all xBytes are written.
  *
  * @param[in] pxUsbHost The usb host peripheral handle returned in iot_usb_host_open() function.
  * @param[in] pxPipe The pipe handle.
