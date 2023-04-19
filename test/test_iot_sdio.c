@@ -422,7 +422,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadDirect )
     lRetVal = iot_sdio_card_connect( xSdioHandle );
     TEST_ASSERT_EQUAL( IOT_SDIO_SUCCESS, lRetVal );
 
-    /* Read orginal value from register and save it */
+    /* Read original value from register and save it */
     lRetVal = iot_sdio_io_read_direct( xSdioHandle,
                                        eSdioFunction0,
                                        testIotSdio_CMD52TESTADDR,

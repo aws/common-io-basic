@@ -156,7 +156,7 @@ TEST( TEST_IOT_PWM, AFQP_IotPwm_SetGetConfig )
         xGetPwmConfig = iot_pwm_get_config( xPwmHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, xGetPwmConfig );
 
-        /* Confim Set and Get are the same */
+        /* Confirm Set and Get are the same */
         TEST_ASSERT_EQUAL( xSetPwmConfig.ulPwmFrequency, xGetPwmConfig->ulPwmFrequency );
         TEST_ASSERT_EQUAL( xSetPwmConfig.ucPwmDutyCycle, xGetPwmConfig->ucPwmDutyCycle );
         TEST_ASSERT_EQUAL( xSetPwmConfig.ucPwmChannel, xGetPwmConfig->ucPwmChannel );

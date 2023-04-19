@@ -466,7 +466,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CReadAsyncAssisted )
         /* Set completion callback */
         iot_i2c_set_callback( xI2CHandle, prvI2CCallback, NULL );
 
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -660,7 +660,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CReadAsyncFailReadTwice )
         /* Set completion callback */
         iot_i2c_set_callback( xI2CHandle, prvI2CCallback, NULL );
 
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -964,7 +964,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteAsyncAssisted )
         /* Set completion callback */
         iot_i2c_set_callback( xI2CHandle, prvI2CCallback, NULL );
 
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -1012,7 +1012,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteAsyncFailIoctl )
         /* Set completion callback */
         iot_i2c_set_callback( xI2CHandle, prvI2CCallback, NULL );
 
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -1024,7 +1024,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteAsyncFailIoctl )
         lRetVal = iot_i2c_write_async( xI2CHandle, writeVal, sizeof( writeVal ) );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
-        /* Set i2c congifuration during transaction */
+        /* Set i2c configuration during transaction */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_BUSY, lRetVal );
 
@@ -1176,7 +1176,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CReadSyncAssisted )
 
     if( TEST_PROTECT() )
     {
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -1184,7 +1184,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CReadSyncAssisted )
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetSlaveAddr, &ucAssistedTestIotI2CSlaveAddr );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSendNoStopFlag, NULL );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
@@ -1340,7 +1340,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2CWriteSyncAssisted )
 
     if( TEST_PROTECT() )
     {
-        /* Set i2c congifuration */
+        /* Set i2c configuration */
         lRetVal = iot_i2c_ioctl( xI2CHandle, eI2CSetMasterConfig, &xI2CConfig );
         TEST_ASSERT_EQUAL( IOT_I2C_SUCCESS, lRetVal );
 
