@@ -159,12 +159,13 @@
  * @brief sdio io bus width
  */
 /** 1 bit bus mode */
-#define IOT_SDIO_BUS_1BIT                      ( 0 )
+#define IOT_SDIO_BUS_1BIT    ( 0 )
 /* 1 is reserved per SDIO specification */
 /** 4 bit bus mode */
-#define IOT_SDIO_BUS_4BIT                      ( 2 )
+#define IOT_SDIO_BUS_4BIT    ( 2 )
 /** 8 bit bus mode */
-#define IOT_SDIO_BUS_8BIT                      ( 3 )
+#define IOT_SDIO_BUS_8BIT    ( 3 )
+
 /**
  * @brief sdio io read/write direction
  */
