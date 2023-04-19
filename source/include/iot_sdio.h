@@ -37,7 +37,7 @@
  *          by expanding the APIs in this file or adding separate files for SD/MMC.
  *
  * @details Consideration
- * 
+ *
  *          SDIO HAL APIs performs protocol layer tasks between SDIO host and SDIO card.
  *          Some APIs perform a single task and some APIs perform a sequence of tasks.
  *          For examples, iot_sdio_io_read_direct() API performs a single task of reading
@@ -53,7 +53,7 @@
  *          writes data to SDIO card in the slot, etc.
  *
  *          Limitation
- * 
+ *
  *          SDIO HAL APIs are intended to be used in embedded systems where each SDIO host
  *          controller is connected to either a single hot swappable sdio card slot or multiple
  *          eSDIO devices in a Shared Bus Configuration (Refer to Section 7.3 of "SD Specification
@@ -158,10 +158,10 @@
 /**
  * @brief sdio io bus width
  */
-#define IOT_SDIO_BUS_1BIT    ( 0 )  /*!< 1 bit bus mode */
+#define IOT_SDIO_BUS_1BIT                      ( 0 ) /*!< 1 bit bus mode */
 /*!< 1 is reserved per SDIO specification */
-#define IOT_SDIO_BUS_4BIT    ( 2 )  /*!< 4 bit bus mode */
-#define IOT_SDIO_BUS_8BIT    ( 3 )  /*!< 8 bit bus mode */
+#define IOT_SDIO_BUS_4BIT                      ( 2 ) /*!< 4 bit bus mode */
+#define IOT_SDIO_BUS_8BIT                      ( 3 ) /*!< 8 bit bus mode */
 
 /**
  * @brief sdio io read/write direction

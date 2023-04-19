@@ -186,9 +186,9 @@ typedef struct
 typedef struct IotUsbInterfaceInfo
 {
     IotUsbDeviceEndpointConfig_t endpoint[ IOT_USB_HOST_MAX_ENDPOINTS ]; /*!< Endpoint configuration array. */
-    uint8_t ucInterfaceIndex; /*!< Interface index. */
-    uint8_t ucEpCount; /*!< Number of endpoints. */
-    uint8_t ucAlternateSettingNumber; /*!< Alternate setting number. */
+    uint8_t ucInterfaceIndex;                                            /*!< Interface index. */
+    uint8_t ucEpCount;                                                   /*!< Number of endpoints. */
+    uint8_t ucAlternateSettingNumber;                                    /*!< Alternate setting number. */
 } IotUsbInterfaceInfo_t;
 
 /**
@@ -197,7 +197,7 @@ typedef struct IotUsbInterfaceInfo
 typedef struct IotUsbConfigurationInfo
 {
     IotUsbInterfaceInfo_t * pxInterface; /*!< Interface array. */
-    uint8_t ucInterfaceCount; /*!< Number of interfaces. */
+    uint8_t ucInterfaceCount;            /*!< Number of interfaces. */
 } IotUsbConfigurationInfo_t;
 
 /**

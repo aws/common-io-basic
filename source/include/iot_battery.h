@@ -92,7 +92,7 @@ typedef enum
     eBatteryOverTemp,          /*!< Battery maximum temperature limit reached. */
     eBatteryUnderTemp,         /*!< Battery minimum temperature limit reached. */
     eBatteryOverChargingTemp,  /*!< Battery maximum charging temperature limit reached. */
-    eBatteryUnderChargingTemp,  /*!< Battery minimum charging temperature limit reached. */
+    eBatteryUnderChargingTemp, /*!< Battery minimum charging temperature limit reached. */
     eBatteryChargeTimeExpired, /*!< Battery charge timer expired. Charge timer can be set if the underlying hardware supports it using
                                 * eSetBatteryChargeTimer IOCTL, and once the chargeTimer expires registered callback is called with this status set */
     eBatteryUnknown            /*!< Unknown status. Default status if no battery is present */
