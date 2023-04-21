@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['iot_5fadc_5fch_5fbusy_0',['IOT_ADC_CH_BUSY',['../iot__adc_8h.html#a3bbfbc918d3d2b92f0c9807d6b85e2ec',1,'iot_adc.h']]],
+  ['iot_5fadc_5ffailed_1',['IOT_ADC_FAILED',['../iot__adc_8h.html#a1016b7edb9e249cdee6b4a6f87f6f046',1,'iot_adc.h']]],
+  ['iot_5fadc_5ffunction_5fnot_5fsupported_2',['IOT_ADC_FUNCTION_NOT_SUPPORTED',['../iot__adc_8h.html#a0d1f26c419bcd48255452baf502df4f2',1,'iot_adc.h']]],
+  ['iot_5fadc_5finvalid_5fvalue_3',['IOT_ADC_INVALID_VALUE',['../iot__adc_8h.html#a308933792f5a5743c99392447cb5c7d5',1,'iot_adc.h']]],
+  ['iot_5fadc_5fnot_5fopen_4',['IOT_ADC_NOT_OPEN',['../iot__adc_8h.html#a92ac6ed2ffece2d0e0acbcfbaa827cfa',1,'iot_adc.h']]],
+  ['iot_5fadc_5fsuccess_5',['IOT_ADC_SUCCESS',['../iot__adc_8h.html#aba01db325e6bd3edba929aeb2643de60',1,'iot_adc.h']]],
+  ['iot_5fhw_5funsupported_6',['IOT_HW_UNSUPPORTED',['../iot__hw_8h.html#a8c4e1bb2022f8604bcc2ed0ad6eb9b89',1,'iot_hw.h']]],
+  ['iot_5fusb_5fcontrol_5fendpoint_7',['IOT_USB_CONTROL_ENDPOINT',['../iot__usb__device_8h.html#a0666c25bf027d0d80306f4c759a78605',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5fbusy_8',['IOT_USB_DEVICE_BUSY',['../iot__usb__device_8h.html#a5459cbe4141d9e61963c51a0f6b702e7',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5ferror_9',['IOT_USB_DEVICE_ERROR',['../iot__usb__device_8h.html#ae27f2e53fea31d1d398958781fc66756',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5ffunction_5fnot_5fsupported_10',['IOT_USB_DEVICE_FUNCTION_NOT_SUPPORTED',['../iot__usb__device_8h.html#a8142e0dd01525a4b3ae0c20932b379cf',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5finvalid_5fvalue_11',['IOT_USB_DEVICE_INVALID_VALUE',['../iot__usb__device_8h.html#a52965b64d92b724b5309c483a208e21c',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5fnothing_5fto_5fcancel_12',['IOT_USB_DEVICE_NOTHING_TO_CANCEL',['../iot__usb__device_8h.html#a9efb87472793179aadd68fb8b31fafd2',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5fread_5ffailed_13',['IOT_USB_DEVICE_READ_FAILED',['../iot__usb__device_8h.html#a13452cc454f393653a8a1d2d28ef9a7d',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5fsuccess_14',['IOT_USB_DEVICE_SUCCESS',['../iot__usb__device_8h.html#ab6e34afb4ea7bd07d55adfe7eacf77ef',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fdevice_5fwrite_5ffailed_15',['IOT_USB_DEVICE_WRITE_FAILED',['../iot__usb__device_8h.html#aa12d4f40b76d1c751d2c09ac7ffa1f05',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fendpoint_5fnumber_5fmask_16',['IOT_USB_ENDPOINT_NUMBER_MASK',['../iot__usb__device_8h.html#a29c6a357d1d2bbe2035c51697ffec102',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5fsetup_5fpacket_5fsize_17',['IOT_USB_SETUP_PACKET_SIZE',['../iot__usb__device_8h.html#a725aabf28e4e973a8fd09ceef1da6037',1,'iot_usb_device.h']]],
+  ['iot_5fusb_5funinitialized_5fval_5f32_18',['IOT_USB_UNINITIALIZED_VAL_32',['../iot__usb__device_8h.html#a9ccdb3c138f6802c7080bc8a6d58e5fa',1,'iot_usb_device.h']]]
+];
