@@ -182,7 +182,7 @@ TEST( TEST_IOT_EFUSE, AFQP_IotEfuseWriteRead32BitWord )
         TEST_ASSERT_EQUAL( IOT_EFUSE_SUCCESS, lRetVal );
     }
 
-    /* Read back to check it vlaue is written correctly */
+    /* Read back to check it value is written correctly */
     lRetVal = iot_efuse_read_32bit_word( xEfuseHandle, ulValidIndex, ( uint32_t * ) &ulReadVal );
 
     if( lRetVal != IOT_EFUSE_FUNCTION_NOT_SUPPORTED )
@@ -262,7 +262,7 @@ TEST( TEST_IOT_EFUSE, AFQP_IotEfuseWriteRead16BitWord )
         TEST_ASSERT_EQUAL( IOT_EFUSE_SUCCESS, lRetVal );
     }
 
-    /* Read back to check it vlaue is written correctly */
+    /* Read back to check it value is written correctly */
     lRetVal = iot_efuse_read_16bit_word( xEfuseHandle, ulValidIndex, ( uint16_t * ) &ulReadVal );
 
     if( lRetVal != IOT_EFUSE_FUNCTION_NOT_SUPPORTED )

@@ -136,7 +136,7 @@ static void prvWdogCallback( void * pvUserContext )
     {
         /* For bites, we should restart the timer when the callback is received.
          * This as some HW has the interrupt bound to serving the watchdog which
-         * means the callback will keep fireing until the watchdog is served or
+         * means the callback will keep firing until the watchdog is served or
          * until the device resets. */
         /* Restart the watchdog timer. */
         lRetVal = iot_watchdog_restart( ( IotWatchdogHandle_t ) pvUserContext );
@@ -228,7 +228,7 @@ TEST( TEST_IOT_WATCHDOG, AFQP_IotWatchdogValidateBarkTimer )
             lRetVal = iot_watchdog_start( xWdogHandle );
             TEST_ASSERT_EQUAL( IOT_WATCHDOG_SUCCESS, lRetVal );
 
-            /* Check the watchdog timer status and ensure that ist running */
+            /* Check the watchdog timer status and ensure that it's running */
             lRetVal = iot_watchdog_ioctl( xWdogHandle,
                                           eGetWatchdogStatus,
                                           ( void * const ) &lWdogStatus );

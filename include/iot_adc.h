@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -114,7 +114,7 @@ int32_t iot_adc_close( IotAdcHandle_t const pxAdc );
  * @param[in] pvUserContext The user context to be passed when callback is called.
  *
  * <b>Example Callback Function</b>
- * For asychronous ADC calls, a callback function is used to signal when the async
+ * For asynchronous ADC calls, a callback function is used to signal when the async
  * task is complete.  This example uses a Semaphore to signal the completion.
  * @code{c}
  * static void prvAdcChCallback( uint16_t * pusConvertedData,
@@ -142,8 +142,8 @@ void iot_adc_set_callback( IotAdcHandle_t const pxAdc,
  *
  * @note iot_adc_set_callback() must be called prior to iot_adc_start().
  *
- * @param[in] pxAdc. The ADC handle returned in the open() call
- * @param[in] ucAdcChannel. The ADC channel to start data acquisition
+ * @param[in] pxAdc The ADC handle returned in the open() call
+ * @param[in] ucAdcChannel The ADC channel to start data acquisition
  *
  * @return
  * - IOT_ADC_SUCCESS on success
@@ -195,8 +195,8 @@ int32_t iot_adc_start( IotAdcHandle_t const pxAdc,
 /**
  * @brief Stop data acquisition for ADC channel
  *
- * @param[in] pxAdc. The ADC handle returned in the open() call
- * @param[in] ucAdcChannel. The ADC channel to stop data acquisition
+ * @param[in] pxAdc The ADC handle returned in the open() call
+ * @param[in] ucAdcChannel The ADC channel to stop data acquisition
  *
  * @return
  * - IOT_ADC_SCUCCESS on success
@@ -209,9 +209,9 @@ int32_t iot_adc_stop( IotAdcHandle_t const pxAdc,
 /**
  * @brief read one ADC data sample. This API will return one ADC sample.
  *
- * @param[in] pxAdc. The ADC handle returned in the open() call.
- * @param[in] ucAdcChannel. The ADC channel to read data from.
- * @param[out] pusAdcSample. ADC channel read sample value.
+ * @param[in] pxAdc The ADC handle returned in the open() call.
+ * @param[in] ucAdcChannel The ADC channel to read data from.
+ * @param[out] pusAdcSample ADC channel read sample value.
  *
  * @return
  * - IOT_ADC_SCUCCESS on success.
@@ -270,6 +270,9 @@ typedef struct IotAdcConfig_s
                                *!< value = resolution bits; 12 = 12bit, 13 = 13bit, etc */
 } IotAdcConfig_t;
 
+/**
+ * @brief enum for ADC channel state (idle/busy)
+ */
 typedef enum
 {
     eChStateIdle, /*!< ADC channel is idle. */
@@ -341,8 +344,7 @@ typedef enum IotAdcIoctlRequest_s
  *
  * @param[in] pxAdc The ADC handle returned in the open() call.
  * @param[in] xRequest ioctl request defined by IotAdcIoctlRequest_s enums.
- * @param[in/out] pvBuffer data buffer for ioctl request.
- * @param[in] pvBuffer size.
+ * @param[in,out] pvBuffer data buffer for ioctl request.
  *
  * @return
  * - IOT_ADC_SCUCCESS on success

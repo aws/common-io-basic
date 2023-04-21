@@ -51,7 +51,7 @@
 /*-----------------------------------------------------------*/
 uint32_t ultestIotPowerDelay = 100;            /* Default Delay used 100 msec*/
 
-uint32_t ultestIotPowerSleepTimeTolerance = 3; /* Sleep time tolerence - should be 1 */
+uint32_t ultestIotPowerSleepTimeTolerance = 3; /* Sleep time tolerance - should be 1 */
 uint32_t ultestIotPowerPcWakeThreshold = 2;    /* Default threshold for PCWake Idle is 2ticks/ms */
 uint32_t ultestIotPowerClkSrcOffThreshold = 8; /* Default threshold for ClkSrcOff Idle is 8ticks/ms */
 uint32_t ultestIotPowerVddOffThreshold = 9;    /* Default threshold for VddOff Idle is 9ticks/ms */

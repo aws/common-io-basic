@@ -422,7 +422,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadDirect )
     lRetVal = iot_sdio_card_connect( xSdioHandle );
     TEST_ASSERT_EQUAL( IOT_SDIO_SUCCESS, lRetVal );
 
-    /* Read orginal value from register and save it */
+    /* Read original value from register and save it */
     lRetVal = iot_sdio_io_read_direct( xSdioHandle,
                                        eSdioFunction0,
                                        testIotSdio_CMD52TESTADDR,
@@ -660,7 +660,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadExtended )
                                          1U );
     TEST_ASSERT_EQUAL( IOT_SDIO_SUCCESS, lRetVal );
 
-    /* 1e. data from both version of extended reads shoud match */
+    /* 1e. data from both version of extended reads should match */
     for( i = 0; i < sizeof( extend_read_buf ); i++ )
     {
         TEST_ASSERT_EQUAL( extend_read_buf[ i ], extend_block_read_buf[ i ] );
@@ -693,7 +693,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadExtended )
                                          ucReadData,
                                          testIotSdio_BLKSIZ_LEN );
 
-    /* 2d. campare read data with written data*/
+    /* 2d. compare read data with written data*/
     for( i = 0; i < testIotSdio_BLKSIZ_LEN; i++ )
     {
         TEST_ASSERT_EQUAL( ucReadData[ i ], ucWriteData[ i ] );
@@ -723,7 +723,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadExtended )
                               ( void * ) &eFunc );
     TEST_ASSERT_EQUAL( IOT_SDIO_SUCCESS, lRetVal );
 
-    /* 3d. restore orignal data using extended block write */
+    /* 3d. restore original data using extended block write */
     lRetVal = iot_sdio_io_write_extended( xSdioHandle,
                                           eSdioFunction0,
                                           true,
@@ -742,7 +742,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioWriteReadExtended )
                                          1U );
     TEST_ASSERT_EQUAL( IOT_SDIO_SUCCESS, lRetVal );
 
-    /* 3f. campare read data with written data*/
+    /* 3f. compare read data with written data*/
     for( i = 0; i < testIotSdio_BLKSIZ_LEN; i++ )
     {
         TEST_ASSERT_EQUAL( ucReadData[ i ], ucBlkSzSave[ i ] );
@@ -954,7 +954,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioIoctl )
     }
     else
     {
-        /* Driver strength type B (default) must be set if the requested driver strenghth type was
+        /* Driver strength type B (default) must be set if the requested driver strength type was
          * type B or a type that was not supported by card */
         TEST_ASSERT_EQUAL( eSdDriverStrengthTypeB, ( testIotSdio_DTS_MASK & ucReadVal ) >> testIotSdio_DTS_BITS );
     }
@@ -1070,7 +1070,7 @@ TEST( TEST_IOT_SDIO, AFQP_IotSdioIoctlFuzzing )
                               ( void * ) &etestIotSdioDriverType );
     TEST_ASSERT_EQUAL( IOT_SDIO_INVALID_VALUE, lRetVal );
 
-    /* Should return IOT_SDIO_INVALID_VALUE on invlaid ioctl request enum number */
+    /* Should return IOT_SDIO_INVALID_VALUE on invalid ioctl request enum number */
     lRetVal = iot_sdio_ioctl( xSdioHandle,
                               -1,
                               ( void * ) &etestIotSdioDriverType );

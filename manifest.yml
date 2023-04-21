@@ -1,0 +1,5 @@
+name: "common-io-basic"
+version: "v1.0.0"
+description: |
+  "Common IO - basic: Hardware Abstraction Layers for basic IO devices.\n"
+license: "MIT"

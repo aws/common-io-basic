@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -26,7 +26,7 @@
 /*******************************************************************************
  * @file iot_perfcounter.h
  *
- * @breif HAL APIs for Performance Counter
+ * @brief HAL APIs for Performance Counter
  *
  *******************************************************************************
  */
@@ -65,10 +65,10 @@ uint64_t iot_perfcounter_get_value( void );
 /**
  * @brief   iot_perfcounter_get_frequency is used to get the current frequency
  *          performance counters are running at. This can be used to determine the
- *          time delta between two perfcounter values returned by valling iot_perfcounter_get_value()
+ *          time delta between two perfcounter values returned by calling iot_perfcounter_get_value()
  *
  * @return  returns the frequency of the performance counter as a uint32 value.
- *          This can be used to deterime the period between perfcounter
+ *          This can be used to determine the period between perfcounter
  *          increments.
  */
 uint32_t iot_perfcounter_get_frequency( void );

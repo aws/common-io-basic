@@ -156,7 +156,7 @@ TEST( TEST_IOT_PWM, AFQP_IotPwm_SetGetConfig )
         xGetPwmConfig = iot_pwm_get_config( xPwmHandle );
         TEST_ASSERT_NOT_EQUAL( NULL, xGetPwmConfig );
 
-        /* Confim Set and Get are the same */
+        /* Confirm Set and Get are the same */
         TEST_ASSERT_EQUAL( xSetPwmConfig.ulPwmFrequency, xGetPwmConfig->ulPwmFrequency );
         TEST_ASSERT_EQUAL( xSetPwmConfig.ucPwmDutyCycle, xGetPwmConfig->ucPwmDutyCycle );
         TEST_ASSERT_EQUAL( xSetPwmConfig.ucPwmChannel, xGetPwmConfig->ucPwmChannel );
@@ -420,7 +420,7 @@ void prvTestPwmAccuracy( uint32_t ulGpioInstance,
         xPwmHandle = iot_pwm_open( ulPwmInstance );
         TEST_ASSERT_NOT_EQUAL( NULL, xPwmHandle );
 
-        /* Settup the pwm configuration */
+        /* Setup the pwm configuration */
         xSetPwmConfig.ulPwmFrequency = ultestIotPwmFrequency;
         xSetPwmConfig.ucPwmDutyCycle = ultestIotPwmDutyCycle;
         xSetPwmConfig.ucPwmChannel = ulPwmChannel;
@@ -463,7 +463,7 @@ TEST( TEST_IOT_PWM, AFQP_IotPwmAccuracy )
 /*-----------------------------------------------------------*/
 
 /**
- * @brief Assited Test Function to test pwm accuracy by running the
+ * @brief Assisted Test Function to test pwm accuracy by running the
  * pwm signal for 5 seconds and also counting the number of pulses
  *
  */

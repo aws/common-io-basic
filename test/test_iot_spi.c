@@ -257,7 +257,7 @@ TEST( TEST_IOT_SPI, AFQP_IotSPI_ReadSync )
         TEST_ASSERT_EQUAL( IOT_SPI_SUCCESS, lRetVal );
         TEST_ASSERT_EQUAL( xBytesRx, 4 );
 
-        /* Expect slave to send odd numbers on succesful master read */
+        /* Expect slave to send odd numbers on successful master read */
         for( lLoop = 0; lLoop < 4; lLoop++ )
         {
             TEST_ASSERT_EQUAL( ucRxBuf[ lLoop ], ( ( lLoop * 2 ) + 1 ) );
@@ -392,7 +392,7 @@ TEST( TEST_IOT_SPI, AFQP_IotSPI_ReadAsync )
         TEST_ASSERT_EQUAL( IOT_SPI_SUCCESS, lRetVal );
         TEST_ASSERT_EQUAL( xBytesRx, 4 );
 
-        /* Expect slave to send odd numbers on succesful master read */
+        /* Expect slave to send odd numbers on successful master read */
         for( lLoop = 0; lLoop < 4; lLoop++ )
         {
             TEST_ASSERT_EQUAL( ucRxBuf[ lLoop ], ( ( lLoop * 2 ) + 1 ) );
@@ -718,7 +718,7 @@ TEST( TEST_IOT_SPI, AFQP_IotSPI_TransferSync )
         TEST_ASSERT_EQUAL( IOT_SPI_SUCCESS, lRetVal );
         TEST_ASSERT_EQUAL( 4, xBytesTx );
 
-        /* Expect slave to send odd numbers on succesful master read */
+        /* Expect slave to send odd numbers on successful master read */
         for( lLoop = 0; lLoop < 4; lLoop++ )
         {
             TEST_ASSERT_EQUAL( ucRxBuf[ lLoop ], ( ( lLoop * 2 ) + 1 ) );
@@ -867,7 +867,7 @@ TEST( TEST_IOT_SPI, AFQP_IotSPI_TransferAsync )
         lRetVal = xSemaphoreTake( xtestIotSPISemaphore, testIotSPI_DEFAULT_SEMAPHORE_DELAY );
         TEST_ASSERT_EQUAL( pdTRUE, lRetVal );
 
-        /* Expect slave to send odd numbers on succesful master read */
+        /* Expect slave to send odd numbers on successful master read */
         for( lLoop = 0; lLoop < 4; lLoop++ )
         {
             TEST_ASSERT_EQUAL( ucRxBuf[ lLoop ], ( ( lLoop * 2 ) + 1 ) );
@@ -1488,7 +1488,7 @@ TEST( TEST_IOT_SPI, AFQP_IotSPI_CancelFuzzing )
 
 /**
  * @brief Assumes HW loopback where MOSI --> MISO.
- *        Verify the happy-path of a syncronous read
+ *        Verify the happy-path of a synchronous read
  *
  */
 TEST( TEST_IOT_SPI, IotSPI_LoopBack_ReadSync )
@@ -1574,7 +1574,7 @@ TEST( TEST_IOT_SPI, IotSPI_LoopBack_ReadAsync )
 
 /**
  * @brief Assumes HW loopback where MOSI --> MISO.
- *        Verify the happy-path of a syncronous write
+ *        Verify the happy-path of a synchronous write
  *
  */
 TEST( TEST_IOT_SPI, IotSPI_LoopBack_WriteSync )
@@ -1604,7 +1604,7 @@ TEST( TEST_IOT_SPI, IotSPI_LoopBack_WriteSync )
 
 /**
  * @brief Assumes HW loopback where MOSI --> MISO.
- *        Verify the happy-path of a asyncronous write
+ *        Verify the happy-path of a asynchronous write
  *
  */
 TEST( TEST_IOT_SPI, IotSPI_LoopBack_WriteAsync )
@@ -1634,7 +1634,7 @@ TEST( TEST_IOT_SPI, IotSPI_LoopBack_WriteAsync )
 
 /**
  * @brief Assumes HW loopback where MOSI --> MISO.
- *        Verify the happy-path of a syncronous transfer
+ *        Verify the happy-path of a synchronous transfer
  *
  */
 TEST( TEST_IOT_SPI, IotSPI_LoopBack_TransferSync )
@@ -1670,7 +1670,7 @@ TEST( TEST_IOT_SPI, IotSPI_LoopBack_TransferSync )
 
 /**
  * @brief Assumes HW loopback where MOSI --> MISO.
- *        Verify the happy-path of a asyncronous transfer
+ *        Verify the happy-path of a asynchronous transfer
  *
  */
 TEST( TEST_IOT_SPI, IotSPI_LoopBack_TransferAsync )

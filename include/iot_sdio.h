@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Common IO V0.1.3
+ * Common IO - basic V1.0.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -36,7 +36,8 @@
  *          the APIs for SDIO applications, the interface can be expanded to support SD/MMC either
  *          by expanding the APIs in this file or adding separate files for SD/MMC.
  *
- * @design consideration
+ * @details Consideration
+ *
  *          SDIO HAL APIs performs protocol layer tasks between SDIO host and SDIO card.
  *          Some APIs perform a single task and some APIs perform a sequence of tasks.
  *          For examples, iot_sdio_io_read_direct() API performs a single task of reading
@@ -51,9 +52,10 @@
  *          checks SDIO card presence, and iot_sdio_io_write_extended(pxSdioHandle)
  *          writes data to SDIO card in the slot, etc.
  *
- * @limitation
+ *          Limitation
+ *
  *          SDIO HAL APIs are intended to be used in embedded systems where each SDIO host
- *          controller is connected to either a single hot swappable sido card slot or multiple
+ *          controller is connected to either a single hot swappable sdio card slot or multiple
  *          eSDIO devices in a Shared Bus Configuration (Refer to Section 7.3 of "SD Specification
  *          Part E1 SDIO").
  *
@@ -80,87 +82,89 @@
 /**
  * @brief The return codes for the functions in SDIO
  */
-/*!< SDIO operation completed successfully. */
+/** SDIO operation completed successfully. */
 #define IOT_SDIO_SUCCESS                       ( 0 )
 
-/*!< SDIO ioctl failed. */
+/** SDIO ioctl failed. */
 #define IOT_SDIO_IOCTL_FAIL                    ( 1 )
 
-/*!< SDIO host controller initialization failed. */
+/** SDIO host controller initialization failed. */
 #define IOT_SDIO_HOST_INIT_FAIL                ( 2 )
 
-/*!< At least one parameter is invalid. */
+/** At least one parameter is invalid. */
 #define IOT_SDIO_INVALID_VALUE                 ( 3 )
 
-/*!< Sending command to or receive response from card failed. */
+/** Sending command to or receive response from card failed. */
 #define IOT_SDIO_TRANSFER_FAIL                 ( 4 )
 
-/*!< If the card is initialized in 3.3V signaling, and card support high speed
- *   mode (SHS ==1), host can issue CMD52 in RAW mode, setting EHS bit in CCCR
- *   to one to switch to high speed mode. This error code indicates that the
- *   sdio card supports high speed mode but failed to switch to high speed
- *   mode. The bus clock rate remains unchanged in this case. */
+/** If the card is initialized in 3.3V signaling, and card support high speed
+ *  mode (SHS ==1), host can issue CMD52 in RAW mode, setting EHS bit in CCCR
+ *  to one to switch to high speed mode. This error code indicates that the
+ *  sdio card supports high speed mode but failed to switch to high speed
+ *  mode. The bus clock rate remains unchanged in this case. */
 #define IOT_SDIO_SWITCH_HIGH_SPEED_FAIL        ( 5 )
 
-/*!< If the card is initialized in 3.3V signaling, and card support high speed
- *   mode (SHS ==1), host can issue CMD52 in RAW mode, setting EHS bit in CCCR
- *   to one to switch to high speed mode. This error code indicates that the
- *   sdio card does not supports high speed mode. The bus clock rate will be
- *   set to the default 25MHz in this case. */
+/** If the card is initialized in 3.3V signaling, and card support high speed
+ *  mode (SHS ==1), host can issue CMD52 in RAW mode, setting EHS bit in CCCR
+ *  to one to switch to high speed mode. This error code indicates that the
+ *  sdio card does not supports high speed mode. The bus clock rate will be
+ *  set to the default 25MHz in this case. */
 #define IOT_SDIO_LOW_SPEED_CARD                ( 6 )
 
-/*!< If the card is initialized in 1.8V signaling, and card support UHS-I, host
- *   will try to set card's bus timing mode to the highest mode the card
- *   supports using CMD52, and set the max clock frequence for that mode. This
- *   error code indicates a failure of such operation */
+/** If the card is initialized in 1.8V signaling, and card support UHS-I, host
+ *  will try to set card's bus timing mode to the highest mode the card
+ *  supports using CMD52, and set the max clock frequency for that mode. This
+ *  error code indicates a failure of such operation. */
 #define IOT_SDIO_SELECT_BUS_TIMING_FAIL        ( 7 )
 
-/*!< Setting block size for block transfer mode failed. */
+/** Setting block size for block transfer mode failed. */
 #define IOT_SDIO_SET_CARD_BLOCK_SIZE_FAIL      ( 8 )
 
-/*!< During card initializaton, A host that supports UHS-I use CMD5 to probe if
- *   card also supports UHS-I and ready to switch from 3.3v to 1.8v. Once
- *   voltage switch request is accepted, host sends CMD11 to initiate voltage
- *   switch sequence. This error code indicates either card failed to respond
- *   to CMD11 or card responded to CMD11 but failed to switch voltage.*/
+/** During card initialization, A host that supports UHS-I use CMD5 to probe if
+ *  card also supports UHS-I and ready to switch from 3.3v to 1.8v. Once
+ *  voltage switch request is accepted, host sends CMD11 to initiate voltage
+ *  switch sequence. This error code indicates either card failed to respond
+ *  to CMD11 or card responded to CMD11 but failed to switch voltage. */
 #define IOT_SDIO_SWITCH_VOLTAGE_FAIL           ( 9 )
 
-/*!< host controller not ready. */
+/** host controller not ready. */
 #define IOT_SDIO_HOST_NOT_READY                ( 10 )
 
-/*!< Not a valid SDIO card. */
+/** Not a valid SDIO card. */
 #define IOT_SDIO_INVALID_CARD                  ( 11 )
 
-/*!< Send Relative Address (CMD3) failed. */
+/** Send Relative Address (CMD3) failed. */
 #define IOT_SDIO_SEND_RELATIVE_ADDRESS_FAIL    ( 12 )
 
-/*!< Select Card (CMD7) failed. */
+/** Select Card (CMD7) failed. */
 #define IOT_SDIO_SELECT_CARD_FAIL              ( 13 )
 
-/*!< Read (via CMD52) CIS (Card Information
- *   Structure failed. */
+/** Read (via CMD52) CIS (Card Information
+ *  Structure failed. */
 #define IOT_SDIO_READ_CIS_FAIL                 ( 14 )
 
-/*!< Set (via CMD52) data bus width failed. */
+/** Set (via CMD52) data bus width failed. */
 #define IOT_SDIO_SET_DATA_BUS_WIDTH_FAIL       ( 15 )
 
-/*!< Card does not support Asynchronous Interrupt. */
+/** Card does not support Asynchronous Interrupt. */
 #define IOT_SDIO_ASYNC_INT_NOT_SUPPORTED       ( 16 )
 
-/*!< Reading CCCR (function 0) or FBR (function 1-7) failed*/
+/** Reading CCCR (function 0) or FBR (function 1-7) failed. */
 #define IOT_SDIO_GET_CARD_CAPABILITY_FAIL      ( 17 )
 
-/*!< Api function is not supported by platform */
+/** API function is not supported by platform. */
 #define IOT_SDIO_FUNCTION_NOT_SUPPORTED        ( 18 )
 
 /**
  * @brief sdio io bus width
  */
-
-#define IOT_SDIO_BUS_1BIT    ( 0 )     /*!< 1 bit bus mode */
-/*!< 1 is reserved per SDIO specification*/
-#define IOT_SDIO_BUS_4BIT    ( 2 )     /*!< 4 bit bus mode */
-#define IOT_SDIO_BUS_8BIT    ( 3 )     /*!< 8 bit bus mode */
+/** 1 bit bus mode */
+#define IOT_SDIO_BUS_1BIT    ( 0 )
+/* 1 is reserved per SDIO specification */
+/** 4 bit bus mode */
+#define IOT_SDIO_BUS_4BIT    ( 2 )
+/** 8 bit bus mode */
+#define IOT_SDIO_BUS_8BIT    ( 3 )
 
 /**
  * @brief sdio io read/write direction
@@ -183,7 +187,7 @@ typedef enum IotSdioDirection
  *          - SDIO WLAN interface
  *          - Embedded SDIO-ATA standard interface
  *          - SDIO Bluetooth Type-A AMP standard interface
- *          - Other SDIO standard inferface type identified by
+ *          - Other SDIO standard interface type identified by
  *            Extended SDIO Standard Function interface code
  */
 typedef enum IotSdioFunction
@@ -504,7 +508,7 @@ int32_t iot_sdio_card_reset( IotSdioSlotHandle_t const pxSdioHandle );
  * @param[in]   ulRegAddr       The address of the byte of data inside of the
  *                              selected function to write.
  *                              Range is 0 - 0x1ffff.
- * @param[in/out]   pucData     In: data to be written to selected address
+ * @param[in,out]   pucData     In: data to be written to selected address
  *                              Out: If bRaw (read after write) is == false,
  *                                   it is same as the input data.
  *                                   If bRaw (read after write) is == true,
