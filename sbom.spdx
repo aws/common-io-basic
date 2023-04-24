@@ -1,0 +1,22 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: common-io-basic
+DocumentNamespace: https://github.com/FreeRTOS/common-io-basic/blob/v1.0.0/sbom.spdx
+Creator: Amazon Web Services
+Created: 2023-04-24T17:38:13Z
+CreatorComment: NOASSERTION
+DocumentComment: NOASSERTION
+
+PackageName: common-io-basic
+SPDXID: SPDXRef-Package-common-io-basic
+PackageVersion: v1.0.0
+PackageDownloadLocation: https://github.com/aws/common-io-basic/tree/v1.0.0
+PackageLicenseConcluded: MIT
+FilesAnalyzed: True
+PackageVerificationCode: da39a3ee5e6b4b0d3255bfef95601890afd80709
+PackageCopyrightText: NOASSERTION
+PackageSummary: NOASSERTION
+PackageDescription: "Common IO - basic: Hardware Abstraction Layers for basic IO devices.\n"
+
+
