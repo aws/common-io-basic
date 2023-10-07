@@ -294,7 +294,7 @@
     extern uint8_t uctestIotSdioInvalidHostIdx;                  /* An invalid sdio host index for iot_sdio_open */
     extern uint8_t uctestIotSdioValidSlotIdx;                    /* A valid sdio slot index for iot_sdio_open */
     extern uint8_t uctestIotSdioInvalidSlotIdx;                  /* An invalid sdio slot index for iot_sdio_open */
-    extern uint8_t uctestIotSdioInvalidFuncNmbr;                 /* An invalid sdio function number that is not supported on DUT */
+    extern uint8_t uctestIotSdioInvalidFuncNumber;                 /* An invalid sdio function number that is not supported on DUT */
     extern IotSdioCallback_t xtestIotSdioTestCallback;           /* A callback function to be used in the test */
     extern IotSdioCardDetectParam_t xtestIotSdioCardDetectParam; /* A card detection parameter used by DUT */
     extern IotSdioBusWidth_t etestIotSdioBusWidth;               /* A bus width supported on DUT */

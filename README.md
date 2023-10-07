@@ -1,6 +1,6 @@
 ## Common IO - basic
 
-This repository provides a basic set of I/O libraries (HAL, **H**ardware **A**bstraction **L**ayer) for pins and serial communications on embedded devices.
+This repository provides a basic set of I/O libraries (**HAL**, **H**ardware **A**bstraction **L**ayer) for pins and serial communications on embedded devices.
 
 ## Security
 

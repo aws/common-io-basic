@@ -199,7 +199,7 @@ int32_t iot_adc_start( IotAdcHandle_t const pxAdc,
  * @param[in] ucAdcChannel The ADC channel to stop data acquisition
  *
  * @return
- * - IOT_ADC_SCUCCESS on success
+ * - IOT_ADC_SUCCESS on success
  * - IOT_ADC_INVALID_VALUE, on NULL handle or invalid AdcChannel
  * - IOT_ADC_NOT_OPEN if ADC has been closed without re-opening.
  */
@@ -214,7 +214,7 @@ int32_t iot_adc_stop( IotAdcHandle_t const pxAdc,
  * @param[out] pusAdcSample ADC channel read sample value.
  *
  * @return
- * - IOT_ADC_SCUCCESS on success.
+ * - IOT_ADC_SUCCESS on success.
  * - IOT_ADC_INVALID_VALUE, on NULL handle or invalid AdcChannel.
  * - IOT_ADC_CH_BUSY if ADC operation not complete.
  * - IOT_ADC_NOT_OPEN if ADC has been closed without re-opening.
@@ -347,7 +347,7 @@ typedef enum IotAdcIoctlRequest_s
  * @param[in,out] pvBuffer data buffer for ioctl request.
  *
  * @return
- * - IOT_ADC_SCUCCESS on success
+ * - IOT_ADC_SUCCESS on success
  * - IOT_ADC_INVALID_VALUE, on NULL handle or invalid request or NULL or invalid buffer pointer
  * - IOT_ADC_CH_BUSY if ADC operation not complete.
  * - IOT_ADC_NOT_OPEN if ADC has been closed without re-opening.

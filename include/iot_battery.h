@@ -92,7 +92,7 @@ typedef enum
     eBatteryOverTemp,          /*!< Battery maximum temperature limit reached. */
     eBatteryUnderTemp,         /*!< Battery minimum temperature limit reached. */
     eBatteryOverChargingTemp,  /*!< Battery maximum charging temperature limit reached. */
-    eBatteryUnderhargingTemp,  /*!< Battery minimum charging temperature limit reached. */
+    eBatteryUnderChargingTemp,  /*!< Battery minimum charging temperature limit reached. */
     eBatteryChargeTimeExpired, /*!< Battery charge timer expired. Charge timer can be set if the underlying hardware supports it using
                                 * eSetBatteryChargeTimer IOCTL, and once the chargeTimer expires registered callback is called with this status set */
     eBatteryUnknown            /*!< Unknown status. Default status if no battery is present */
@@ -134,7 +134,7 @@ typedef enum IotBatteryIoctlRequest
                                          *   the registered callback will be called with the status value "eBatteryUnderTemp".
                                          *   This IOCTL takes int32_t value as input in milliCelsius units. */
     eSetBatteryMinChargeTempThreshold,  /*!< Set the minimum charge temperature threshold. When the charging temperature goes below this value,
-                                         *   the registered callback will be called with the status value "eBatteryUnderhargingTemp".
+                                         *   the registered callback will be called with the status value "eBatteryUnderChargingTemp".
                                          *   This IOCTL takes int16_t value as input in milliCelsius units.*/
     eSetBatteryMaxChargeTempThreshold,  /*!< Set the maximum charge temperature threshold. When the charging temperature goes above this value,
                                          *   the registered callback will be called with the status value "eBatteryOverChargingTemp".

@@ -387,7 +387,7 @@ int32_t iot_usb_device_endpoint_stall( IotUsbDeviceHandle_t const pxUsbDevice,
                                        uint8_t ucEndpointAddress );
 
 /**
- * @brief Unstall the usb device specific endpoint.
+ * @brief Uninstall the usb device specific endpoint.
  *
  * @param[in] pxUsbDevice The USB device handle returned in open() call.
  * @param[in] ucEndpointAddress Endpoint Address.

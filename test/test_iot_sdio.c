@@ -62,7 +62,7 @@
 #define testIotSdio_FUNC1_BLK_SIZ_ADDR         ( 0x0110 )
 
 #define testIotSdio_TPL_CODE_FUNCID            ( 0x21 )
-#define testIotSdio_TPL_CODE_FUNCE             ( 0x22 )
+#define testIotSdio_TPL_CODE_FUNC             ( 0x22 )
 #define testIotSdio_FUNC_TPL_CNT               ( 0x2 )
 
 #define testIotSdio_OFFSET_LEN                 ( 0x3 )
@@ -93,7 +93,7 @@ uint8_t uctestIotSdioValidHostIdx = 0;                        /**< A valid host 
 uint8_t uctestIotSdioInvalidHostIdx = 2;                      /**< A invalid host index number. */
 uint8_t uctestIotSdioValidSlotIdx = 0;                        /**< A valid Slot index number. */
 uint8_t uctestIotSdioInvalidSlotIdx = 1;                      /**< A invalid Slot index number. */
-uint8_t uctestIotSdioInvalidFuncNmbr = 9;                     /**< A invalid i/o function number. */
+uint8_t uctestIotSdioInvalidFuncNumber = 9;                     /**< A invalid i/o function number. */
 IotSdioCallback_t xtestIotSdioTestCallback = prvSdioCallback; /**< A sdio callback function. */
 IotSdioCardDetectParam_t xtestIotSdioCardDetectParam =
 { eDetectCardByHostCD, false, false };                        /**< A sdio card detection params. */
@@ -108,7 +108,7 @@ bool btestIotSdioVerifyInactive = true;                       /**< Verify card i
 /*-----------------------------------------------------------*/
 static const uint32_t g_funcTupleList[ testIotSdio_FUNC_TPL_CNT ] =
 {
-    testIotSdio_TPL_CODE_FUNCID, testIotSdio_TPL_CODE_FUNCE,
+    testIotSdio_TPL_CODE_FUNCID, testIotSdio_TPL_CODE_FUNC,
 };
 
 extern IotSdioSlotHandle_t gIotSdioHandle[ testIotSdio_HANDLE_HOST_NUM ][ testIotSdio_HANDLE_SLOT_NUM ];

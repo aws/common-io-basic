@@ -1443,7 +1443,7 @@ TEST( TEST_IOT_FLASH, AFQP_IotFlashWriteEraseReadCycle )
 
         for( idx = 0; idx < 5; idx++ )
         {
-            /* Write to this sector and veirfy */
+            /* Write to this sector and verify */
             prvIotFlashWriteReadVerify( xFlashHandle, ultestIotFlashStartOffset, pxFlashInfo->ulPageSize );
 
             /* Get the flash information. */

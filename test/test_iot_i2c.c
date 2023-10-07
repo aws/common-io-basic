@@ -166,7 +166,7 @@ TEST_GROUP_RUNNER( TEST_IOT_I2C )
 {
     RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2COpenCloseSuccess );
     RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2COpenCloseFail );
-    RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2COpenCloseFailUnsupportInst );
+    RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2COpenCloseFailUnsupportedInst );
     RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2CSetGetConfigurationSuccess );
     RUN_TEST_CASE( TEST_IOT_I2C, AFQP_IotI2CSetGetConfigurationFail );
 
@@ -268,7 +268,7 @@ TEST( TEST_IOT_I2C, AFQP_IotI2COpenCloseFail )
 /**
  * @brief Test Function to test iot_i2c_open and iot_i2c_close with unsupported instance
  */
-TEST( TEST_IOT_I2C, AFQP_IotI2COpenCloseFailUnsupportInst )
+TEST( TEST_IOT_I2C, AFQP_IotI2COpenCloseFailUnsupportedInst )
 {
     IotI2CHandle_t xI2CHandle;
     int32_t lRetVal;

@@ -52,7 +52,7 @@
  * framework invoking these tests */
 /*-----------------------------------------------------------*/
 int32_t ltestIotI2sInputInstance = 4;  /* Use Mic instance 4 */
-int32_t ltestIotI2sOutputInstance = 2; /* Use Spkr instance 2 */
+int32_t ltestIotI2sOutputInstance = 2; /* Use Speaker instance 2 */
 int32_t ltestIotI2SReadSize = testIotI2S_BUF_SIZE;
 /*-----------------------------------------------------------*/
 /* Static Globals */
