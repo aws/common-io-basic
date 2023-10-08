@@ -16,6 +16,7 @@ jobs:
         uses: FreeRTOS/CI-CD-Github-Actions/doxygen@main
         with:
           path: ./
+
   spell-check:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +26,7 @@ jobs:
         uses: FreeRTOS/CI-CD-Github-Actions/spellings@main
         with:
           path: ./
+
   formatting:
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +35,15 @@ jobs:
         uses: FreeRTOS/CI-CD-Github-Actions/formatting@main
         with:
           path: ./
+
+  link-verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone This Repo
+        uses: actions/checkout@v3
+      - name: Link Verification
+        uses: FreeRTOS/CI-CD-Github-Actions/link-verifier@v2
+        
   git-secrets:
     runs-on: ubuntu-latest
     steps:
