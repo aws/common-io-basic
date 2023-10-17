@@ -29,8 +29,8 @@ var group__iot__power =
       [ "eGetPCWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da9e7084edb6efade0c4770e27c10d1640", null ],
       [ "eSetClkSrcOffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95dab79e0de4e54a3082a7faa73a8655f43c", null ],
       [ "eGetClkSrcOffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da6197a93b974bcf94c7d468ef9c399bc8", null ],
-      [ "eSetVddOfffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da55bbb237d2403f57f9a131641f714b5d", null ],
-      [ "eGetVddOfffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95dab3acb9cbd894ca3b9ac32bdc9750aeb9", null ],
+      [ "eSetVddOffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da1efa18038b37a83f040e46e58837d4f8", null ],
+      [ "eGetVddOffWakeThreshold", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da0613a8278f4a5c5bef13765b78300d29", null ],
       [ "eSetWakeupSources", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95dacaf867cb0697a90ff7f304d4499abff6", null ],
       [ "eGetWakeupSources", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95dac4998f1eaab5a35a7bddd278f467e51f", null ],
       [ "eGetLastIdleMode", "group__iot__power.html#ggaf75d3829597be038216e288e74e8c95da0e66439501c2bf3eeb40337a6bd245ea", null ]

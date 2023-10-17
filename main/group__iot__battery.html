@@ -164,7 +164,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca00c8f49cb89a2b1c510be6b3099d569b">eBatteryUnderTemp</a>
 , <a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca25e4af349c2c73432362971509b756f0">eBatteryOverChargingTemp</a>
-, <a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca9ac04b2baf6494065f0403c33de02340">eBatteryUnderhargingTemp</a>
+, <a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca25e0058d1f5207c90eeebdf3a16c9e49">eBatteryUnderChargingTemp</a>
 , <a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca56203754ad3ed2b5315a246a75d250b1">eBatteryChargeTimeExpired</a>
 , <br />
 &#160;&#160;<a class="el" href="group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca36eb5eb7366a35a97df381e0b442fbe3">eBatteryUnknown</a>
@@ -430,7 +430,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga7ba319da2a49b7ae566d7cf075ec97aca25e4af349c2c73432362971509b756f0" name="gga7ba319da2a49b7ae566d7cf075ec97aca25e4af349c2c73432362971509b756f0"></a>eBatteryOverChargingTemp&#160;</td><td class="fielddoc"><p>Battery maximum charging temperature limit reached. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga7ba319da2a49b7ae566d7cf075ec97aca9ac04b2baf6494065f0403c33de02340" name="gga7ba319da2a49b7ae566d7cf075ec97aca9ac04b2baf6494065f0403c33de02340"></a>eBatteryUnderhargingTemp&#160;</td><td class="fielddoc"><p>Battery minimum charging temperature limit reached. </p>
+<tr><td class="fieldname"><a id="gga7ba319da2a49b7ae566d7cf075ec97aca25e0058d1f5207c90eeebdf3a16c9e49" name="gga7ba319da2a49b7ae566d7cf075ec97aca25e0058d1f5207c90eeebdf3a16c9e49"></a>eBatteryUnderChargingTemp&#160;</td><td class="fielddoc"><p>Battery minimum charging temperature limit reached. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga7ba319da2a49b7ae566d7cf075ec97aca56203754ad3ed2b5315a246a75d250b1" name="gga7ba319da2a49b7ae566d7cf075ec97aca56203754ad3ed2b5315a246a75d250b1"></a>eBatteryChargeTimeExpired&#160;</td><td class="fielddoc"><p>Battery charge timer expired. Charge timer can be set if the underlying hardware supports it using eSetBatteryChargeTimer IOCTL, and once the chargeTimer expires registered callback is called with this status set </p>
 </td></tr>
@@ -462,7 +462,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga73a94ffbc3e8ee5f6bc3572f052b9990a469c8980872337f39fa61df43ea3089b" name="gga73a94ffbc3e8ee5f6bc3572f052b9990a469c8980872337f39fa61df43ea3089b"></a>eSetBatteryMaxBatteryTempThreshold&#160;</td><td class="fielddoc"><p>Set the maximum battery temperature threshold. When the battery temperature goes above this value, the registered callback will be called with the status value "eBatteryUnderTemp". This IOCTL takes int32_t value as input in milliCelsius units. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga73a94ffbc3e8ee5f6bc3572f052b9990af3fdf9654641cb464345e330dd74f23b" name="gga73a94ffbc3e8ee5f6bc3572f052b9990af3fdf9654641cb464345e330dd74f23b"></a>eSetBatteryMinChargeTempThreshold&#160;</td><td class="fielddoc"><p>Set the minimum charge temperature threshold. When the charging temperature goes below this value, the registered callback will be called with the status value "eBatteryUnderhargingTemp". This IOCTL takes int16_t value as input in milliCelsius units. </p>
+<tr><td class="fieldname"><a id="gga73a94ffbc3e8ee5f6bc3572f052b9990af3fdf9654641cb464345e330dd74f23b" name="gga73a94ffbc3e8ee5f6bc3572f052b9990af3fdf9654641cb464345e330dd74f23b"></a>eSetBatteryMinChargeTempThreshold&#160;</td><td class="fielddoc"><p>Set the minimum charge temperature threshold. When the charging temperature goes below this value, the registered callback will be called with the status value "eBatteryUnderChargingTemp". This IOCTL takes int16_t value as input in milliCelsius units. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga73a94ffbc3e8ee5f6bc3572f052b9990a8d1dbfeaba94119c2ba376f666b700df" name="gga73a94ffbc3e8ee5f6bc3572f052b9990a8d1dbfeaba94119c2ba376f666b700df"></a>eSetBatteryMaxChargeTempThreshold&#160;</td><td class="fielddoc"><p>Set the maximum charge temperature threshold. When the charging temperature goes above this value, the registered callback will be called with the status value "eBatteryOverChargingTemp". This IOCTL takes int32_t value as input in milliCelsius units. </p>
 </td></tr>

@@ -230,7 +230,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0bfa047c2b3bf6d5737c0a7fb76a5086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stall the usb device specific endpoint. This function is to set stall conditions for the specific endpoint. The STALL packet indicates that the endpoint has halted, or a control pipe does not support a certain request. A function uses the STALL handshake packet to indicate that it is unable to transmit or receive data. Besides the default control pipe, all of a function's endpoints are in an undefined state after the device issues a STALL handshake packet. The host must never issue a STALL handshake packet. Typically, the STALL handshake indicates a functional stall. A functional stall occurs when the halt feature of an endpoint is set. In this circumstance, host intervention is required via the default control pipe to clear the halt feature of the halted endpoint. Less often, the function returns a STALL handshake during a SETUP or DATA stage of a control transfer. This is called a protocol stall and is resolved when the host issues the next SETUP transaction.  <br /></td></tr>
 <tr class="separator:ga0bfa047c2b3bf6d5737c0a7fb76a5086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6e78156384ad3239af107d7f7a1fae76"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__iot__usb__device.html#ga6e78156384ad3239af107d7f7a1fae76">iot_usb_device_endpoint_unstall</a> (<a class="el" href="group__iot__usb__device.html#gafef9b113ed9ec0661dad02268665ddde">IotUsbDeviceHandle_t</a> const pxUsbDevice, uint8_t ucEndpointAddress)</td></tr>
-<tr class="memdesc:ga6e78156384ad3239af107d7f7a1fae76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unstall the usb device specific endpoint.  <br /></td></tr>
+<tr class="memdesc:ga6e78156384ad3239af107d7f7a1fae76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uninstall the usb device specific endpoint.  <br /></td></tr>
 <tr class="separator:ga6e78156384ad3239af107d7f7a1fae76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae79115cc930cea3e0dacdbde5e97c1af"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__iot__usb__device.html#gae79115cc930cea3e0dacdbde5e97c1af">iot_usb_device_read_sync</a> (<a class="el" href="group__iot__usb__device.html#gafef9b113ed9ec0661dad02268665ddde">IotUsbDeviceHandle_t</a> const pxUsbDevice, uint8_t ucEndpointAddress, uint8_t *const pvBuffer, size_t xBytes)</td></tr>
 <tr class="memdesc:gae79115cc930cea3e0dacdbde5e97c1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the USB device read operation in blocking mode.  <br /></td></tr>
@@ -869,7 +869,7 @@ Newly set callback overrides the one previously set</dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Unstall the usb device specific endpoint. </p>
+<p>Uninstall the usb device specific endpoint. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pxUsbDevice</td><td>The USB device handle returned in open() call. </td></tr>

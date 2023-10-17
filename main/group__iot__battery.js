@@ -37,7 +37,7 @@ var group__iot__battery =
       [ "eBatteryOverTemp", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97acac48444a75e5481b1984395c69bd9aa40", null ],
       [ "eBatteryUnderTemp", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca00c8f49cb89a2b1c510be6b3099d569b", null ],
       [ "eBatteryOverChargingTemp", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca25e4af349c2c73432362971509b756f0", null ],
-      [ "eBatteryUnderhargingTemp", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca9ac04b2baf6494065f0403c33de02340", null ],
+      [ "eBatteryUnderChargingTemp", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca25e0058d1f5207c90eeebdf3a16c9e49", null ],
       [ "eBatteryChargeTimeExpired", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca56203754ad3ed2b5315a246a75d250b1", null ],
       [ "eBatteryUnknown", "group__iot__battery.html#gga7ba319da2a49b7ae566d7cf075ec97aca36eb5eb7366a35a97df381e0b442fbe3", null ]
     ] ],
