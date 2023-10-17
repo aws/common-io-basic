@@ -180,7 +180,7 @@ void iot_i2s_set_callback( IotI2SHandle_t const pxI2SPeripheral,
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal or pvBuffer are NULL
+ *      - pxI2SPeripheral or pvBuffer are NULL
  *      - xBytes == 0
  *   - IOT_I2S_READ_FAIL if there was an error doing the read
  *   - IOT_I2S_NOT_INITIALIZED if I2S not first initialized with ioctl call eI2SSetConfig.
@@ -200,7 +200,7 @@ int32_t iot_i2s_read_async( IotI2SHandle_t const pxI2SPeripheral,
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal or pvBuffer are NULL
+ *      - pxI2SPeripheral or pvBuffer are NULL
  *      - xBytes == 0
  *   - IOT_I2S_WRITE_FAIL if there was an error doing the write
  *   - IOT_I2S_NOT_INITIALIZED if I2S not first initialized with ioctl call eI2SSetConfig.
@@ -220,7 +220,7 @@ int32_t iot_i2s_write_async( IotI2SHandle_t const pxI2SPeripheral,
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal or pvBuffer are NULL
+ *      - pxI2SPeripheral or pvBuffer are NULL
  *      - xBytes == 0
  *   - IOT_I2S_READ_FAIL if there was an error doing the read
  *   - IOT_I2S_NOT_INITIALIZED if I2S not first initialized with ioctl call eI2SSetConfig.
@@ -240,7 +240,7 @@ int32_t iot_i2s_read_sync( IotI2SHandle_t const pxI2SPeripheral,
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal or pvBuffer are NULL
+ *      - pxI2SPeripheral or pvBuffer are NULL
  *      - xBytes == 0
  *   - IOT_I2S_WRITE_FAIL if there was an error doing the write
  *   - IOT_I2S_NOT_INITIALIZED if I2S not first initialized with ioctl call eI2SSetConfig.
@@ -258,7 +258,7 @@ int32_t iot_i2s_write_sync( IotI2SHandle_t const pxI2SPeripheral,
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal is NULL
+ *      - pxI2SPeripheral is NULL
  *      - instance not open (previously closed)
  */
 int32_t iot_i2s_close( IotI2SHandle_t const pxI2SPeripheral );
@@ -286,7 +286,7 @@ int32_t iot_i2s_close( IotI2SHandle_t const pxI2SPeripheral );
  * @return
  *   - IOT_I2S_SUCCESS on success
  *   - IOT_I2S_INVALID_VALUE if
- *      - pxI2SPeriperal is NULL
+ *      - pxI2SPeripheral is NULL
  *      - xI2SRequest is invalid
  *      - pvBuffer is NULL
  *   - IOT_I2S_FUNCTION_NOT_SUPPORTED if designated IotI2SMode_t in eI2SSetConfig is not supported.
@@ -302,7 +302,7 @@ int32_t iot_i2s_ioctl( IotI2SHandle_t const pxI2SPeripheral,
  *
  * @return
  *   - IOT_I2S_SUCCESS on success
- *   - IOT_I2S_INVALID_VALUE if pxI2SPeriperal is NULL
+ *   - IOT_I2S_INVALID_VALUE if pxI2SPeripheral is NULL
  *   - IOT_I2S_NOTHING_TO_CANCEL if nothing to cancel.
  *   - IOT_I2S_FUNCTION_NOT_SUPPORTED if cancel operation not supported.
  */

@@ -115,11 +115,11 @@ typedef enum IotPowerIoctlRequest
                                  * the time you set to ClkSrcOffWakeThreshold then the device would
                                  * enter ClkSrcOffModeMode.  Threshold values are uint32_t in millisecond units.*/
     eGetClkSrcOffWakeThreshold, /*!< Get Clock off threshold time.  Threshold values are uint32_t in millisecond units.*/
-    eSetVddOfffWakeThreshold,   /*!< VddOffMode is entered when expected idle time provided by RTOS
-                                 * is greater or equal to the VddOfffWakeThreshold. If all idleTask meet
+    eSetVddOffWakeThreshold,    /*!< VddOffMode is entered when expected idle time provided by RTOS
+                                 * is greater or equal to the VddOffWakeThreshold. If all idleTask meet
                                  * this condition, core will shut off to enter VddOffMode.
                                  * Threshold values are uint32_t in millisecond units. */
-    eGetVddOfffWakeThreshold,   /*!< Get power off (vdd rails off - or lower input voltage etc..) threshold time.
+    eGetVddOffWakeThreshold,    /*!< Get power off (vdd rails off - or lower input voltage etc..) threshold time.
                                  * Threshold values are uint32_t in millisecond units.  */
     eSetWakeupSources,          /*!< Set wakeup sources that can wake-up the target from idle modes. Wakeup sources
                                  * may only be needed for specific idle modes based on the thresholds set above
@@ -189,7 +189,7 @@ int32_t iot_power_set_mode( IotPowerHandle_t const pxPowerHandle,
  *          to a known previous state.
  *          For example, if we take the following flow:
  *          1. set_mode(eHighPerformanceMode)
- *          2. reset_modqe() -> At this point the current mode is set to eUnKnownMode
+ *          2. reset_mode() -> At this point the current mode is set to eUnKnownMode
  *          3. Idle checks to see if it can enter a deep power state based on existing timers.
  *          4. If a callback is registered, the callback is called with bIdle set to "true"
  *          4a.  The callback can request a mode change causing idle to abort.

@@ -191,7 +191,7 @@ int32_t iot_watchdog_stop( IotWatchdogHandle_t const pxWatchdogHandle );
 int32_t iot_watchdog_restart( IotWatchdogHandle_t const pxWatchdogHandle );
 
 /*!
- * @brief   iot_wathcdog_set_callback is used to set the callback to be called when
+ * @brief   iot_watchdog_set_callback is used to set the callback to be called when
  *          bark time reaches the WatchDog counter or if the bite time is configured to
  *          generate interrupt (if supported by HW). The caller must set the timers using
  *          IOCTL and start the timer for the callback to be called back.

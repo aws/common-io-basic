@@ -9,36 +9,47 @@ on:
 
 jobs:
   doxygen:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run doxygen build
         uses: FreeRTOS/CI-CD-Github-Actions/doxygen@main
         with:
           path: ./
+
   spell-check:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run spellings check
         uses: FreeRTOS/CI-CD-Github-Actions/spellings@main
         with:
           path: ./
+
   formatting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Check formatting
         uses: FreeRTOS/CI-CD-Github-Actions/formatting@main
         with:
           path: ./
+
+  link-verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone This Repo
+        uses: actions/checkout@v3
+      - name: Link Verification
+        uses: FreeRTOS/CI-CD-Github-Actions/link-verifier@v2
+        
   git-secrets:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Checkout awslabs/git-secrets
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: awslabs/git-secrets
           ref: master

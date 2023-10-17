@@ -569,28 +569,28 @@ TEST( TEST_IOT_POWER, AFQP_IotPower_IoctlEnum )
         }
     }
 
-    /* Call iot_power_ioctl with eGetVddOfffWakeThreshold / eSetVddOfffWakeThreshold */
-    lRetVal = iot_power_ioctl( xPowerHandle, eGetVddOfffWakeThreshold, &ulMilliSeconds1 );
+    /* Call iot_power_ioctl with eGetVddOffWakeThreshold / eSetVddOffWakeThreshold */
+    lRetVal = iot_power_ioctl( xPowerHandle, eGetVddOffWakeThreshold, &ulMilliSeconds1 );
 
     if( lRetVal != IOT_POWER_FUNCTION_NOT_SUPPORTED )
     {
         TEST_ASSERT_EQUAL( IOT_POWER_SUCCESS, lRetVal );
 
         ulMilliSeconds1 += 1;
-        lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOfffWakeThreshold, &ulMilliSeconds1 );
+        lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOffWakeThreshold, &ulMilliSeconds1 );
 
         if( lRetVal != IOT_POWER_FUNCTION_NOT_SUPPORTED )
         {
             TEST_ASSERT_EQUAL( IOT_POWER_SUCCESS, lRetVal );
 
             /* Get new value.  Make sure it incremented */
-            lRetVal = iot_power_ioctl( xPowerHandle, eGetVddOfffWakeThreshold, &ulMilliSeconds2 );
+            lRetVal = iot_power_ioctl( xPowerHandle, eGetVddOffWakeThreshold, &ulMilliSeconds2 );
             TEST_ASSERT_EQUAL( IOT_POWER_SUCCESS, lRetVal );
             TEST_ASSERT_EQUAL( ulMilliSeconds1, ulMilliSeconds2 );
 
             /* put it back to original setting */
             ulMilliSeconds1 -= 1;
-            lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOfffWakeThreshold, &ulMilliSeconds1 );
+            lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOffWakeThreshold, &ulMilliSeconds1 );
             TEST_ASSERT_EQUAL( IOT_POWER_SUCCESS, lRetVal );
         }
     }
@@ -702,7 +702,7 @@ TEST( TEST_IOT_POWER, AFQP_IotPower_IoctlFuzzing )
     TEST_ASSERT_NOT_EQUAL( NULL, xPowerHandle );
 
     /* Call the ioctl with invalid handle */
-    lRetVal = iot_power_ioctl( NULL, eSetVddOfffWakeThreshold, NULL );
+    lRetVal = iot_power_ioctl( NULL, eSetVddOffWakeThreshold, NULL );
     TEST_ASSERT_EQUAL( IOT_POWER_INVALID_VALUE, lRetVal );
 
     /* Call the mode with invalid handle */
@@ -1084,9 +1084,9 @@ TEST( TEST_IOT_POWER, AFQP_IotPower_VddOffWakeThresholdTest )
         TEST_ASSERT_EQUAL( IOT_POWER_SUCCESS, lRetVal );
     }
 
-    /* Call iot_power_ioctl with  eSetVddOfffWakeThreshold */
+    /* Call iot_power_ioctl with  eSetVddOffWakeThreshold */
     ulMilliSeconds = ultestIotPowerVddOffThreshold;
-    lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOfffWakeThreshold, &ulMilliSeconds );
+    lRetVal = iot_power_ioctl( xPowerHandle, eSetVddOffWakeThreshold, &ulMilliSeconds );
 
     if( lRetVal != IOT_POWER_FUNCTION_NOT_SUPPORTED )
     {
