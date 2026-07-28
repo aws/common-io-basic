@@ -47,6 +47,10 @@ jobs:
     needs: clean-existing-tag-and-release
     name: Tag commit
     runs-on: ubuntu-latest
+    env:
+      VERSION_NUMBER: ${{ github.event.inputs.version_number }}
+      COMMIT_ID: ${{ github.event.inputs.commit_id }}
+      ACTOR: ${{ github.actor }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -54,10 +58,10 @@ jobs:
           ref: ${{ github.event.inputs.commit_id }}
       - name: Configure git identity
         run: |
-          git config --global user.name ${{ github.actor }}
-          git config --global user.email ${{ github.actor }}@users.noreply.github.com
+          git config --global user.name "$ACTOR"
+          git config --global user.email "$ACTOR@users.noreply.github.com"
       - name: create a new branch that references commit id
-        run: git checkout -b ${{ github.event.inputs.version_number }} ${{ github.event.inputs.commit_id }}
+        run: git checkout -b "$VERSION_NUMBER" "$COMMIT_ID"
       - name: Generate SBOM
         uses: FreeRTOS/CI-CD-Github-Actions/sbom-generator@main
         with:
@@ -67,22 +71,25 @@ jobs:
         run: |
           git add .
           git commit -m 'Update SBOM'
-          git push -u origin ${{ github.event.inputs.version_number }}
+          git push -u origin "$VERSION_NUMBER"
       - name: Tag Commit and Push to remote
         run: |
-          git tag ${{ github.event.inputs.version_number }} -a -m "coreMQTT Library ${{ github.event.inputs.version_number }}"
+          git tag "$VERSION_NUMBER" -a -m "coreMQTT Library $VERSION_NUMBER"
           git push origin --tags
       - name: Verify tag on remote
         run: |
-          git tag -d ${{ github.event.inputs.version_number }}
+          git tag -d "$VERSION_NUMBER"
           git remote update
-          git checkout tags/${{ github.event.inputs.version_number }}
-          git diff ${{ github.event.inputs.commit_id }} tags/${{ github.event.inputs.version_number }}
+          git checkout tags/"$VERSION_NUMBER"
+          git diff "$COMMIT_ID" tags/"$VERSION_NUMBER"
   create-zip:
     if: ${{ ( github.event.inputs.delete_existing_tag_release == 'true' && success() )  || ( github.event.inputs.delete_existing_tag_release == 'false' && always() ) }}
     needs: add-sbom-and-tag-commit
     name: Create ZIP and verify package for release asset.
     runs-on: ubuntu-latest
+    env:
+      VERSION_NUMBER: ${{ github.event.inputs.version_number }}
+      COMMIT_ID: ${{ github.event.inputs.commit_id }}
     steps:
       - name: Install ZIP tools
         run: sudo apt-get install zip unzip
@@ -98,20 +105,20 @@ jobs:
           git submodule update --init --checkout --recursive
       - name: Create ZIP
         run: |
-          zip -r common-io-basic-${{ github.event.inputs.version_number }}.zip common-io-basic -x "*.git*"
+          zip -r common-io-basic-"$VERSION_NUMBER".zip common-io-basic -x "*.git*"
           ls ./
       - name: Validate created ZIP
         run: |
           mkdir zip-check
-          mv common-io-basic-${{ github.event.inputs.version_number }}.zip zip-check
+          mv common-io-basic-"$VERSION_NUMBER".zip zip-check
           cd zip-check
-          unzip common-io-basic-${{ github.event.inputs.version_number }}.zip -d common-io-basic-${{ github.event.inputs.version_number }}
-          ls common-io-basic-${{ github.event.inputs.version_number }}
-          diff -r -x "*.git*" common-io-basic-${{ github.event.inputs.version_number }}/common-io-basic/ ../common-io-basic/
+          unzip common-io-basic-"$VERSION_NUMBER".zip -d common-io-basic-"$VERSION_NUMBER"
+          ls common-io-basic-"$VERSION_NUMBER"
+          diff -r -x "*.git*" common-io-basic-"$VERSION_NUMBER"/common-io-basic/ ../common-io-basic/
           cd ../
       # - name: Build
       #   run: |
-      #     cd zip-check/common-io-basic-${{ github.event.inputs.version_number }}/common-io-basic
+      #     cd zip-check/common-io-basic-"$VERSION_NUMBER"/common-io-basic
       #     sudo apt-get install -y lcov
       #     cmake -S test -B build/ \
       #     -G "Unix Makefiles" \
@@ -121,7 +128,7 @@ jobs:
       #     make -C build/ all
       # - name: Test
       #   run: |
-      #     cd zip-check/common-io-basic-${{ github.event.inputs.version_number }}/common-io-basic/build/
+      #     cd zip-check/common-io-basic-"$VERSION_NUMBER"/common-io-basic/build/
       #     ctest -E system --output-on-failure
       #     cd ..
       - name: Create artifact of ZIP
